@@ -46,3 +46,8 @@ ul {
   padding-top: 1px;
   color: white !important;
 }
+
+.picsWidth{
+    height: 50px;
+    width: 140px;
+}
