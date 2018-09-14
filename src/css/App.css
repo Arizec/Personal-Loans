@@ -45,19 +45,15 @@ ul {
     height: 90%;
 }
 
-.container {
+.contain {
     position: relative;
     text-align: center;
-    color: black;
+    color: red;
 }
 
 .centered {
     position: absolute;
-    top: 30%;
-    left: 25%;
-    transform: translate(-30%, -30%);
-    height: 80%;
+    top: 10%;
+    left: 15%;
     width: 40%;
-    background-color: #f8faff;
-    border-radius: 10px;
 }
