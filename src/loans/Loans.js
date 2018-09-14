@@ -12,7 +12,7 @@ export default class Loans extends React.Component {
             <div>
                 <Header/>
                 <div className={"admin-events"}>
-                    <img src={background} alt="" />
+                    <img className={"homepage-background"} src={background} alt="" />
                 </div>
             </div>
 
