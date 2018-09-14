@@ -5,6 +5,8 @@ import NavLink from 'reactstrap/lib/NavLink';
 import { Link } from 'react-router-dom';
 import '../css/App.css';
 
+const logo = require('../assets/nab-logo.svg');
+
 //Header for application
 export default class Header extends React.Component {
     render() {
@@ -12,14 +14,12 @@ export default class Header extends React.Component {
         var urlsplit = url.split("/").slice(-1)[0];
 
         var isActive1 = urlsplit === 'events' ? 'is-active': '';
-        var isActive2 = urlsplit === 'user-management' ? 'is-active': '';
 
         return (
             <div className="event-title">
-                <h3>{this.props.adminName}</h3>
                 <Nav>
                     <NavItem>
-                        <NavLink className={isActive1} tag={Link} to="/">Home</NavLink>
+                        <NavLink tag={Link} to="/"> <img className="picsWidth" src={logo} alt="" /></NavLink>
                     </NavItem>
                 </Nav>
             </div>
