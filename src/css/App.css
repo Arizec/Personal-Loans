@@ -54,7 +54,7 @@ a:-webkit-any-link {
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: black;
   white-space: nowrap;
 }
 .topnav:after{
