@@ -52,8 +52,13 @@ ul {
 
 .centered {
     position: absolute;
+    text-align: center;
     background-color: white;
     top: 10%;
     left: 15%;
     width: 40%;
+}
+
+.form-item-padding{
+    margin: 20px;
 }
