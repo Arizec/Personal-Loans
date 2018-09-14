@@ -47,12 +47,12 @@ ul {
 
 .contain {
     position: relative;
-    text-align: center;
-    color: red;
+    color: black;
 }
 
 .centered {
     position: absolute;
+    background-color: white;
     top: 10%;
     left: 15%;
     width: 40%;

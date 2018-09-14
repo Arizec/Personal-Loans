@@ -4,6 +4,15 @@ import Header from "./Header";
 import { Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemTitle,
+    AccordionItemBody,
+} from 'react-accessible-accordion';
+
+// Demo styles, see 'Styles' section below for some notes on use.
+import 'react-accessible-accordion/dist/fancy-example.css';
 
 const background = require('../assets/beach.png');
 
@@ -19,14 +28,27 @@ export default class Loans extends React.Component {
                 <div className={"contain"}>
                         <img className={"homepage-background"} src={background} alt="" />
                     <div className={"centered"}>
-                        <ListGroup>
-                            <ListGroupItem>Cras justo odio</ListGroupItem>
-                            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                            <ListGroupItem>Morbi leo risus</ListGroupItem>
-                            <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
-                            <ListGroupItem>Vestibulum at eros</ListGroupItem>
-                        </ListGroup>
+                        <Accordion>
+                            <AccordionItem expanded="true">
+                                <AccordionItemTitle>
+                                    <h4>Your loan details</h4>
+                                </AccordionItemTitle>
+                                <AccordionItemBody>
+                                    <p>How many people are applying?</p>
+                                    <p>How many people are applying?</p>
+                                </AccordionItemBody>
+                            </AccordionItem>
+                            <AccordionItem>
+                                <AccordionItemTitle>
+                                    <h4>Tell us about yourself</h4>
+                                </AccordionItemTitle>
+                                <AccordionItemBody>
+                                    <p>Body content</p>
+                                </AccordionItemBody>
+                            </AccordionItem>
+                        </Accordion>
                     </div>
+
                 </div>
 
                     {/*<div className="container">*/}
