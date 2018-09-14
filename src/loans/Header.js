@@ -19,10 +19,7 @@ export default class Header extends React.Component {
                 <h3>{this.props.adminName}</h3>
                 <Nav>
                     <NavItem>
-                        <NavLink className={isActive1} tag={Link} to="/events">Events</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className={isActive2} tag={Link} to="/user-management">Teams</NavLink>
+                        <NavLink className={isActive1} tag={Link} to="/">Home</NavLink>
                     </NavItem>
                 </Nav>
             </div>
