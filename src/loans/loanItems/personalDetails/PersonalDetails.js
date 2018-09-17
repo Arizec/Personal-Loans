@@ -47,18 +47,20 @@ export default class PersonalDetails extends React.Component {
         return (
             <div>
                 <div className={"form-item-padding"} onChange={this.setPeopleNo.bind(this)}>How many people are applying?
-                    <FormGroup check>
-                        <Label check >
-                            <Input type="radio" name="radioPeopleNo" value="ONE"/>{' '}
-                            1 person
-                        </Label>
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li className>
+                                <input type="radio" id="n1" name="numberOfPeople" value="ONE"/>
+                                <label htmlFor="n1">1</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="n2" name="numberOfPeople" value="TWO" />
+                                <label htmlFor="n2">2</label>
+                            </li>
+                        </ul>
+
                     </FormGroup>
-                    <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radioPeopleNo" value="TWO"/>{' '}
-                            2 people
-                        </Label>
-                    </FormGroup>
+
 
                 </div>
                 <div className={"form-item-padding"} onChange={this.setIsExistingCustomer.bind(this)}>Are you an existing customer?

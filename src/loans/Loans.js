@@ -15,6 +15,7 @@ import {
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
 import PersonalDetails from "./loanItems/personalDetails/PersonalDetails";
+import LoanSummary from "./loanSummary";
 
 const background = require('../assets/beach.png');
 
@@ -22,13 +23,23 @@ const background = require('../assets/beach.png');
 //Allows main admin to add other admin or invite attendee users
 export default class Loans extends React.Component {
 
+    constructor(props){
+        super(props)
+    }
+
+    state = {
+        numberOfPeople:2,
+        borrowAmount: 5000,
+        loanPeriod: 5,
+        estimatedRepayment:115
+    }
     render() {
         return (
             <div>
                 <Header/>
                 <div className={"contain"}>
                         <img className={"homepage-background"} src={background} alt="" />
-                    <div className={"centered"}>
+                    <span className="left">
                         <Accordion>
                             <AccordionItem expanded="true">
                                 <AccordionItemTitle>
@@ -47,9 +58,17 @@ export default class Loans extends React.Component {
                                 </AccordionItemBody>
                             </AccordionItem>
                         </Accordion>
-                    </div>
-
+                    </span>
+                    <span className="right">
+                        <LoanSummary
+                            numberOfPeople={this.state.numberOfPeople}
+                            borrowAmount= {this.state.borrowAmount}
+                            loanPeriod= {this.state.loanPeriod}
+                            estimatedRepayment={this.state.estimatedRepayment}
+                        />
+                    </span>
                 </div>
+
 
                     {/*<div className="container">*/}
                         {/*<img className={"homepage-background"} src={background} alt="" />*/}
