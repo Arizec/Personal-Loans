@@ -67,7 +67,7 @@ export default class PersonalDetails extends React.Component {
 
 
     render() {
-
+        console.log(this.state.existingCustomer2)
         const { selectedOption } = this.state;
         return (
             <div>
@@ -99,40 +99,40 @@ export default class PersonalDetails extends React.Component {
                             No
                         </Label>
                     </FormGroup>
-                    {
-                        this.state.existingCustomer === "YES" ?
-                            <div className={"form-item-padding"}>What is your NAB Id? (optional)
-                                <Input type="text" name="nabID" id="nabID" placeholder="" />
-                            </div>
-                            : ''
-                    }
-                    {this.state.peopleNo === "TWO" ?
-                        <div className={"form-item-padding"} onChange={this.setIsExistingCustomer2.bind(this)}>Is the other person an existing customer?
-                            <FormGroup check>
-                                <Label check>
-                                    <Input type="radio" name="radioIsExistingCustomer2" value="YES"/>{' '}
-                                    Yes
-                                </Label>
-                            </FormGroup>
-                            <FormGroup check>
-                                <Label check>
-                                    <Input type="radio" name="radioIsExistingCustomer2" value="NO"/>{' '}
-                                    No
-                                </Label>
-                            </FormGroup>
 
-                        </div> :
-                        ''
-                    }
-
-                    {
-                        this.state.existingCustomer2 === "YES" ?
-                            <div className={"form-item-padding"}>What is the other persons NAB Id? (optional)
-                                <Input type="text" name="nabID2" id="nabID2" placeholder="" />
-                            </div>
-                            : ''
-                    }
                 </div>
+                {
+                    this.state.existingCustomer === "YES" ?
+                        <div className={"form-item-padding"}>What is your NAB Id? (optional)
+                            <Input type="text" name="nabID" id="nabID" placeholder="" />
+                        </div>
+                        : ''
+                }
+                {this.state.peopleNo === "TWO" ?
+                    <div className={"form-item-padding"} onChange={this.setIsExistingCustomer2.bind(this)}>Is the other person an existing customer?
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="radio" name="radioIsExistingCustomer2" value="YES"/>{' '}
+                                Yes
+                            </Label>
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="radio" name="radioIsExistingCustomer2" value="NO"/>{' '}
+                                No
+                            </Label>
+                        </FormGroup>
+
+                    </div> :
+                    ''
+                }
+                {
+                    this.state.existingCustomer2 === "YES" ?
+                        <div className={"form-item-padding"}>What is the other persons NAB Id? (optional)
+                            <Input type="text" name="nabID2" id="nabID2" placeholder="" />
+                        </div>
+                        : ''
+                }
                 <div className={"form-item-padding"}>How much would you like to borrow?
                     <Input type="text" name="loanAmount" id="loanAmount" placeholder="$" />
                 </div>
