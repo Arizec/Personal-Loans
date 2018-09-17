@@ -28,6 +28,17 @@ const loanTermOptions = [
 
 //Header for application
 export default class PersonalDetails extends React.Component {
+
+    constructor () {
+        super();
+
+        this.state = {
+            peopleNo: "",
+            existingCustomer: ""
+        }
+
+    }
+
     state = {
         selectedOption: null,
     }
@@ -35,54 +46,91 @@ export default class PersonalDetails extends React.Component {
         this.setState({ selectedOption });
     }
 
-    render() {
+    setPeopleNo(event) {
+        this.setState({
+            peopleNo: event.target.value,
+        });
+    }
 
+    setIsExistingCustomer(event) {
+        this.setState({
+            existingCustomer: event.target.value,
+        });
+        console.log(event.target.value);
+    }
+
+    render() {
+        console.log("THIS STATE", this.state.peopleNo);
         const { selectedOption } = this.state;
         return (
             <div>
-                <div className={"form-item-padding switch-field"}>How many people are applying?
+                <div className={"form-item-padding"} onChange={this.setPeopleNo.bind(this)}>How many people are applying?
                     <FormGroup check>
                         <Label check >
-                            <Input type="radio" name="radio1" />{' '}
+                            <Input type="radio" name="radioPeopleNo" value="ONE"/>{' '}
                             1 person
                         </Label>
                     </FormGroup>
                     <FormGroup check>
                         <Label check>
-                            <Input type="radio" name="radio1" />{' '}
+                            <Input type="radio" name="radioPeopleNo" value="TWO"/>{' '}
                             2 people
                         </Label>
                     </FormGroup>
 
                 </div>
-                <div className={"form-item-padding"}>Are you an existing customer?
+                <div className={"form-item-padding"} onChange={this.setIsExistingCustomer.bind(this)}>Are you an existing customer?
                     <FormGroup check>
                         <Label check>
-                            <Input type="radio" name="radio1" />{' '}
+                            <Input type="radio" name="radioIsExistingCustomer" value="YES"/>{' '}
                             Yes
                         </Label>
                     </FormGroup>
                     <FormGroup check>
                         <Label check>
-                            <Input type="radio" name="radio1" />{' '}
+                            <Input type="radio" name="radioIsExistingCustomer" value="NO"/>{' '}
                             No
                         </Label>
                     </FormGroup>
+                    {
+                        this.state.existingCustomer === "YES" ?
+                            <div className={"form-item-padding"}>What is your NAB Id? (optional)
+                                <Input type="text" name="nabID" id="nabID" placeholder="" />
+                            </div>
+                            : ''
+                    }
+                    {this.state.peopleNo === "TWO" ?
+                        <div className={"form-item-padding"}>Is the other person an existing customer?
+                            <FormGroup check>
+                                <Label check>
+                                    <Input type="radio" name="radioIsExistingCustomer2" value="YES"/>{' '}
+                                    Yes
+                                </Label>
+                            </FormGroup>
+                            <FormGroup check>
+                                <Label check>
+                                    <Input type="radio" name="radioIsExistingCustomer2" value="NO"/>{' '}
+                                    No
+                                </Label>
+                            </FormGroup>
 
+                        </div> :
+                        ''
+                    }
                 </div>
                 <div className={"form-item-padding"}>How much would you like to borrow?
-                    <Input type="email" name="email" id="exampleEmail" placeholder="$" />
+                    <Input type="text" name="loanAmount" id="loanAmount" placeholder="$" />
                 </div>
                 <div className={"form-item-padding"}>Would you like a fixed or variable interest rate?
                     <FormGroup check>
                         <Label check>
-                            <Input type="radio" name="radio1" />{' '}
+                            <Input type="radio" name="radioInterestRate" />{' '}
                             Variable
                         </Label>
                     </FormGroup>
                     <FormGroup check>
                         <Label check>
-                            <Input type="radio" name="radio1" />{' '}
+                            <Input type="radio" name="radioInterestRate" />{' '}
                             Fixed
                         </Label>
                     </FormGroup>
