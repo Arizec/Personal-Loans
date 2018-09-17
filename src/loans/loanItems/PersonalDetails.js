@@ -34,7 +34,8 @@ export default class PersonalDetails extends React.Component {
 
         this.state = {
             peopleNo: "",
-            existingCustomer: ""
+            existingCustomer: "",
+            existingCustomer2: ""
         }
 
     }
@@ -56,11 +57,17 @@ export default class PersonalDetails extends React.Component {
         this.setState({
             existingCustomer: event.target.value,
         });
-        console.log(event.target.value);
     }
 
+    setIsExistingCustomer2(event) {
+        this.setState({
+            existingCustomer2: event.target.value,
+        });
+    }
+
+
     render() {
-        console.log("THIS STATE", this.state.peopleNo);
+
         const { selectedOption } = this.state;
         return (
             <div>
@@ -100,7 +107,7 @@ export default class PersonalDetails extends React.Component {
                             : ''
                     }
                     {this.state.peopleNo === "TWO" ?
-                        <div className={"form-item-padding"}>Is the other person an existing customer?
+                        <div className={"form-item-padding"} onChange={this.setIsExistingCustomer2.bind(this)}>Is the other person an existing customer?
                             <FormGroup check>
                                 <Label check>
                                     <Input type="radio" name="radioIsExistingCustomer2" value="YES"/>{' '}
@@ -116,6 +123,14 @@ export default class PersonalDetails extends React.Component {
 
                         </div> :
                         ''
+                    }
+
+                    {
+                        this.state.existingCustomer2 === "YES" ?
+                            <div className={"form-item-padding"}>What is the other persons NAB Id? (optional)
+                                <Input type="text" name="nabID2" id="nabID2" placeholder="" />
+                            </div>
+                            : ''
                     }
                 </div>
                 <div className={"form-item-padding"}>How much would you like to borrow?
