@@ -40,9 +40,9 @@ export default class PersonalDetails extends React.Component {
         const { selectedOption } = this.state;
         return (
             <div>
-                <div className={"form-item-padding"}>How many people are applying?
+                <div className={"form-item-padding switch-field"}>How many people are applying?
                     <FormGroup check>
-                        <Label check>
+                        <Label check >
                             <Input type="radio" name="radio1" />{' '}
                             1 person
                         </Label>
@@ -55,9 +55,39 @@ export default class PersonalDetails extends React.Component {
                     </FormGroup>
 
                 </div>
-                <div className={"form-item-padding"}>Are you an existing customer?</div>
-                <div className={"form-item-padding"}>How much would you like to borrow?</div>
-                <div className={"form-item-padding"}>Would you like a fixed or variable interest rate?</div>
+                <div className={"form-item-padding"}>Are you an existing customer?
+                    <FormGroup check>
+                        <Label check>
+                            <Input type="radio" name="radio1" />{' '}
+                            Yes
+                        </Label>
+                    </FormGroup>
+                    <FormGroup check>
+                        <Label check>
+                            <Input type="radio" name="radio1" />{' '}
+                            No
+                        </Label>
+                    </FormGroup>
+
+                </div>
+                <div className={"form-item-padding"}>How much would you like to borrow?
+                    <Input type="email" name="email" id="exampleEmail" placeholder="$" />
+                </div>
+                <div className={"form-item-padding"}>Would you like a fixed or variable interest rate?
+                    <FormGroup check>
+                        <Label check>
+                            <Input type="radio" name="radio1" />{' '}
+                            Variable
+                        </Label>
+                    </FormGroup>
+                    <FormGroup check>
+                        <Label check>
+                            <Input type="radio" name="radio1" />{' '}
+                            Fixed
+                        </Label>
+                    </FormGroup>
+
+                </div>
                 <div className={"form-item-padding"}>What loan term would you like?
                     <Select
                         value={selectedOption}
