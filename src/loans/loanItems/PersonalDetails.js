@@ -30,6 +30,7 @@ const loanTermOptions = [
 export default class PersonalDetails extends React.Component {
     state = {
         selectedOption: null,
+
     }
     handleChange = (selectedOption, type) => {
         this.setState({ selectedOption });
@@ -40,21 +41,23 @@ export default class PersonalDetails extends React.Component {
         const { selectedOption } = this.state;
         return (
             <div>
-                <div className={"form-item-padding"}>How many people are applying?
-                    <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radio1" />{' '}
-                            1 person
-                        </Label>
-                    </FormGroup>
-                    <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radio1" />{' '}
-                            2 people
-                        </Label>
-                    </FormGroup>
 
-                </div>
+                <div className={"form-item-padding"}>How many people are applying? </div>
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li className>
+                                <input type="radio" id="n1" name="numberOfPeople"/>
+                                <label htmlFor="n1">1</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="n2" name="numberOfPeople"/>
+                                <label htmlFor="n2">2</label>
+                            </li>
+                        </ul>
+
+                    </FormGroup>
+            <br/><br/>
+
                 <div className={"form-item-padding"}>Are you an existing customer?</div>
                 <div className={"form-item-padding"}>How much would you like to borrow?</div>
                 <div className={"form-item-padding"}>Would you like a fixed or variable interest rate?</div>
