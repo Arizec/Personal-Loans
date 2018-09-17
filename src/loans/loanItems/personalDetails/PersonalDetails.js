@@ -1,17 +1,12 @@
 import React from 'react';
-import '../../css/App.css';
+import '../../../css/App.css';
 import { Button, FormGroup, Label, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import Select from 'react-select';
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
+import LoanPurposeOptions from "./loanPurposeOptions";
 
-
-const loanPurposeOptions = [
-    { value: 'chocolate', label: 'New car' },
-    { value: 'strawberry', label: 'Used car' },
-    { value: 'vanilla', label: 'Debt consolidation' }
-];
 
 const repaymentFrequencyOptions = [
     { value: 'weekly', label: 'Weekly' },
@@ -165,12 +160,7 @@ export default class PersonalDetails extends React.Component {
                         options={repaymentFrequencyOptions}/>
                 </div>
 
-                <div className={"form-item-padding"}>What is the main purpose for this loan?
-                    <Select
-                        value={selectedOption}
-                        onChange={this.handleChange}
-                        options={loanPurposeOptions}/>
-                </div>
+                <LoanPurposeOptions/>
                 <Button color="danger">Next</Button>
             </div>
 

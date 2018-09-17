@@ -14,7 +14,7 @@ import {
 
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
-import PersonalDetails from "./loanItems/PersonalDetails";
+import PersonalDetails from "./loanItems/personalDetails/PersonalDetails";
 
 const background = require('../assets/beach.png');
 
