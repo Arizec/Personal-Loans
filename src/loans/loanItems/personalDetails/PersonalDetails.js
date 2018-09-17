@@ -5,21 +5,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Select from 'react-select';
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
-import LoanPurposeOptions from "./loanPurposeOptions";
-
-
-const repaymentFrequencyOptions = [
-    { value: 'weekly', label: 'Weekly' },
-    { value: 'fortnightly', label: 'Fortnightly' },
-    { value: 'monthly', label: 'Monthly' }
-];
-
-const loanTermOptions = [
-    { value: '1yr', label: '1 year' },
-    { value: '2yrs', label: '2 years' },
-    { value: '3yrs', label: '3 years' }
-];
-
+import LoanPurposeOptions from "./LoanPurposeOptions";
+import RepaymentFrequencyOptions from "./RepaymentFrequencyOptions";
+import LoanTermOptions from "./LoanTermOptions";
 
 //Header for application
 export default class PersonalDetails extends React.Component {
@@ -33,13 +21,6 @@ export default class PersonalDetails extends React.Component {
             existingCustomer2: ""
         }
 
-    }
-
-    state = {
-        selectedOption: null,
-    }
-    handleChange = (selectedOption, type) => {
-        this.setState({ selectedOption });
     }
 
     setPeopleNo(event) {
@@ -62,8 +43,7 @@ export default class PersonalDetails extends React.Component {
 
 
     render() {
-        console.log(this.state.existingCustomer2)
-        const { selectedOption } = this.state;
+
         return (
             <div>
                 <div className={"form-item-padding"} onChange={this.setPeopleNo.bind(this)}>How many people are applying?
@@ -146,20 +126,8 @@ export default class PersonalDetails extends React.Component {
                     </FormGroup>
 
                 </div>
-                <div className={"form-item-padding"}>What loan term would you like?
-                    <Select
-                        value={selectedOption}
-                        onChange={this.handleChange}
-                        options={loanTermOptions}/>
-
-                </div>
-                <div className={"form-item-padding"}>How often would you like to make repayments?
-                    <Select
-                        value={selectedOption}
-                        onChange={this.handleChange}
-                        options={repaymentFrequencyOptions}/>
-                </div>
-
+                <LoanTermOptions/>
+                <RepaymentFrequencyOptions/>
                 <LoanPurposeOptions/>
                 <Button color="danger">Next</Button>
             </div>

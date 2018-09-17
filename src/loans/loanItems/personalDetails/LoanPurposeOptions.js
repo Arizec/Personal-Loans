@@ -4,9 +4,9 @@ import Select from 'react-select';
 
 
 const loanPurposeOptions = [
-    { value: 'chocolate', label: 'New car' },
-    { value: 'strawberry', label: 'Used car' },
-    { value: 'vanilla', label: 'Debt consolidation' }
+    { value: 'new-car', label: 'New car' },
+    { value: 'used-car', label: 'Used car' },
+    { value: 'debt-consolidation', label: 'Debt consolidation' }
 ];
 
 //Header for application
