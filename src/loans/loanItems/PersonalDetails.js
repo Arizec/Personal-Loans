@@ -43,17 +43,17 @@ export default class PersonalDetails extends React.Component {
             <div>
 
                 <div className={"form-item-padding"}>How many people are applying? </div>
-                    <FormGroup>
-                        <ul className="radio-button">
-                            <li className>
-                                <input type="radio" id="n1" name="numberOfPeople"/>
-                                <label htmlFor="n1">1</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="n2" name="numberOfPeople"/>
-                                <label htmlFor="n2">2</label>
-                            </li>
-                        </ul>
+                        <FormGroup>
+                            <ul className="radio-button">
+                                <li className>
+                                    <input type="radio" id="n1" name="numberOfPeople"/>
+                                    <label htmlFor="n1">1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="n2" name="numberOfPeople"/>
+                                    <label htmlFor="n2">2</label>
+                                </li>
+                            </ul>
 
                     </FormGroup>
             <br/><br/>
