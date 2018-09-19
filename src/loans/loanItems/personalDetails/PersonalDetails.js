@@ -58,23 +58,22 @@ export default class PersonalDetails extends React.Component {
                                 <label htmlFor="n2">2</label>
                             </li>
                         </ul><br/><br/>
-
                     </FormGroup>
-
 
                 </div>
                 <div className={"form-item-padding"} onChange={this.setIsExistingCustomer.bind(this)}>Are you an existing customer?
-                    <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radioIsExistingCustomer" value="YES"/>{' '}
-                            Yes
-                        </Label>
-                    </FormGroup>
-                    <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radioIsExistingCustomer" value="NO"/>{' '}
-                            No
-                        </Label>
+
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li className>
+                                <input type="radio" id="r1" name="radioIsExistingCustomer" value="YES"/>
+                                <label htmlFor="r1">YES</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="r2" name="radioIsExistingCustomer" value="NO" />
+                                <label htmlFor="r2">NO</label>
+                            </li>
+                        </ul><br/><br/>
                     </FormGroup>
 
                 </div>
@@ -87,18 +86,21 @@ export default class PersonalDetails extends React.Component {
                 }
                 {this.state.peopleNo === "TWO" ?
                     <div className={"form-item-padding"} onChange={this.setIsExistingCustomer2.bind(this)}>Is the other person an existing customer?
+
+
                         <FormGroup check>
-                            <Label check>
-                                <Input type="radio" name="radioIsExistingCustomer2" value="YES"/>{' '}
-                                Yes
-                            </Label>
+                            <ul className="radio-button">
+                                <li className>
+                                    <input type="radio" id="r21" name="radioIsExistingCustomer2" value="YES"/>
+                                    <label htmlFor="r21">YES</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="r22" name="radioIsExistingCustomer2" value="NO" />
+                                    <label htmlFor="r22">NO</label>
+                                </li>
+                            </ul><br/><br/>
                         </FormGroup>
-                        <FormGroup check>
-                            <Label check>
-                                <Input type="radio" name="radioIsExistingCustomer2" value="NO"/>{' '}
-                                No
-                            </Label>
-                        </FormGroup>
+                        
 
                     </div> :
                     ''
@@ -114,24 +116,28 @@ export default class PersonalDetails extends React.Component {
                     <Input type="text" name="loanAmount" id="loanAmount" placeholder="$" />
                 </div>
                 <div className={"form-item-padding"}>Would you like a fixed or variable interest rate?
+
+
+
                     <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radioInterestRate" />{' '}
-                            Variable
-                        </Label>
+                        <ul className="radio-button">
+                            <li className>
+                                <input type="radio" id="radioInterest1" name="radioInterestRate" value="Variable"/>
+                                <label htmlFor="radioInterest1">Variable</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="radioInterest2" name="radioInterestRate" value="Fixed" />
+                                <label htmlFor="radioInterest2">Fixed</label>
+                            </li>
+                        </ul><br/><br/>
                     </FormGroup>
-                    <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radioInterestRate" />{' '}
-                            Fixed
-                        </Label>
-                    </FormGroup>
+
 
                 </div>
                 <LoanTermOptions/>
                 <RepaymentFrequencyOptions/>
                 <LoanPurposeOptions/>
-                <Button color="danger">Next</Button>
+                <Button color="#c20000">Next</Button>
             </div>
 
         );
