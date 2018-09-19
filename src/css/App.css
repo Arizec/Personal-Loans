@@ -169,10 +169,10 @@ a:-webkit-any-link {
 .radio-button li {
     float: left;
     margin: 0px 0px 0px 0px;
-    width: 10%;
+    width: 20%;
     height: 40px;
     position: relative;
-    left:40%;
+    left:30%;
 }
 
 
@@ -200,7 +200,7 @@ a:-webkit-any-link {
 
 .radio-button input[type="radio"] {
     opacity:0.01;
-    z-index:100;
+    z-index:5;
 }
 
 
@@ -208,7 +208,7 @@ a:-webkit-any-link {
     padding:5px;
     border:1px solid #CCC;
     cursor:pointer;
-    z-index:90;
+    z-index:4;
 }
 
 .radio-button label:hover {
@@ -220,7 +220,10 @@ a:-webkit-any-link {
     background:#c20000;
     color:white;
 }
-
+.btn{
+    background-color:#c20000;
+    color:white;
+}
 .summary-title{
     color: #ffffff;
     text-align: left;

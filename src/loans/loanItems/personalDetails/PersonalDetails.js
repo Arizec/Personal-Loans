@@ -116,24 +116,28 @@ export default class PersonalDetails extends React.Component {
                     <Input type="text" name="loanAmount" id="loanAmount" placeholder="$" />
                 </div>
                 <div className={"form-item-padding"}>Would you like a fixed or variable interest rate?
+
+
+
                     <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radioInterestRate" />{' '}
-                            Variable
-                        </Label>
+                        <ul className="radio-button">
+                            <li className>
+                                <input type="radio" id="radioInterest1" name="radioInterestRate" value="Variable"/>
+                                <label htmlFor="radioInterest1">Variable</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="radioInterest2" name="radioInterestRate" value="Fixed" />
+                                <label htmlFor="radioInterest2">Fixed</label>
+                            </li>
+                        </ul><br/><br/>
                     </FormGroup>
-                    <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radioInterestRate" />{' '}
-                            Fixed
-                        </Label>
-                    </FormGroup>
+
 
                 </div>
                 <LoanTermOptions/>
                 <RepaymentFrequencyOptions/>
                 <LoanPurposeOptions/>
-                <Button color="danger">Next</Button>
+                <Button color="#c20000">Next</Button>
             </div>
 
         );
