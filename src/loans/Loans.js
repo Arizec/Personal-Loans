@@ -37,8 +37,8 @@ export default class Loans extends React.Component {
         return (
             <div>
                 <Header/>
+                <img className={"homepage-background"} src={background} alt="" />
                 <div className={"contain"}>
-                        <img className={"homepage-background"} src={background} alt="" />
                     <span className="left">
                         <Accordion>
                             <AccordionItem expanded="true">
