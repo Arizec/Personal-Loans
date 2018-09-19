@@ -156,19 +156,21 @@ a:-webkit-any-link {
 
 .radio-button {
     list-style-type:none;
-    margin:25px 0 0 0;
+    margin:10px 0 0 0;
     padding:0;
+
 
 }
 
 .radio-button li {
-    float:left;
-    margin:0 0px 0 0;
-    width:100px;
-    height:40px;
-    position:relative;
-
+    float: left;
+    margin: 0px 0px 0px 0px;
+    width: 10%;
+    height: 40px;
+    position: relative;
+    left:40%;
 }
+
 
 .radio-button label, .radio-button input {
     display:block;
@@ -178,6 +180,7 @@ a:-webkit-any-link {
     right:0;
     bottom:0;
     border-radius: 5px;
+
 }
 
 .radio-left {
