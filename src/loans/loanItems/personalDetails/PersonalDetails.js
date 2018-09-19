@@ -57,7 +57,7 @@ export default class PersonalDetails extends React.Component {
                                 <input type="radio" id="n2" name="numberOfPeople" value="TWO" />
                                 <label htmlFor="n2">2</label>
                             </li>
-                        </ul>
+                        </ul><br/><br/>
 
                     </FormGroup>
 
