@@ -18,6 +18,10 @@ export default class Loans extends React.Component {
 
     constructor(props){
         super(props)
+
+        this.state = {
+            loanDetails: true
+        }
     }
 
     state = {
@@ -26,6 +30,11 @@ export default class Loans extends React.Component {
         loanPeriod: 5,
         estimatedRepayment:115
     }
+
+    handleLanguage(langValue){
+        this.setState({loanDetails: langValue});
+    }
+
     render() {
         var second = false
         return (
@@ -37,7 +46,9 @@ export default class Loans extends React.Component {
                         <Form>
                             <div className={"form-section"}>
                                 <h4> Your loan details </h4>
-                                <PersonalDetails/>
+                                {   this.state.loanDetails &&
+                                    <PersonalDetails onSelectLanguage={this.handleLanguage}/>
+                                }
                             </div>
 
                             <div className={"form-section"}>
