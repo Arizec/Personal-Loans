@@ -245,3 +245,12 @@ a:-webkit-any-link {
     margin: auto;
     padding: 3%;
 }
+
+button.editItem, button.editItem:hover{
+    background:white!important;
+    color:black!important;
+    padding:0!important;
+    font: inherit;
+    cursor: pointer;
+    border-color:#ffffff;
+}

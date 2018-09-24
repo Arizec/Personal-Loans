@@ -7,10 +7,6 @@ const iconlock = require('../assets/icon-lock.svg');
 //Header for application
 export default class Header extends React.Component {
     render() {
-        var url = window.location.pathname;
-        var urlsplit = url.split("/").slice(-1)[0];
-
-        var isActive1 = urlsplit === 'events' ? 'is-active': '';
 
         return (
             <div className="topnav">

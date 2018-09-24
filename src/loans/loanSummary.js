@@ -2,10 +2,7 @@ import * as React from "react";
 const sumary_image = require('../assets/icon-personal-loan.svg');
 export default class LoanSummary extends React.Component {
 
-    constructor(props){
-        super(props);
 
-    }
     state = {
         numberOfPeople:this.props.numberOfPeople,
         borrowAmount: this.props.borrowAmount,
