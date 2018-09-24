@@ -132,7 +132,6 @@ a:-webkit-any-link {
     font-size: 0.875em;
     line-height: 18px;
     position: absolute;
-    float:left;
     text-align: center;
     background-color: white;
     top: 10%;
@@ -169,10 +168,10 @@ a:-webkit-any-link {
 .radio-button li {
     float: left;
     margin: 0px 0px 0px 0px;
-    width: 10%;
+    width: 15%;
     height: 40px;
     position: relative;
-    left:40%;
+    left:35%;
 }
 
 
@@ -229,4 +228,17 @@ a:-webkit-any-link {
 
 .disclaimer{
     font-size: 10px;
+}
+
+.form-section{
+    width: 90%;
+    margin: auto;
+    padding: 3%;
+    border-bottom: 1px solid black;
+}
+
+.last-form-section{
+    width: 90%;
+    margin: auto;
+    padding: 3%;
 }
