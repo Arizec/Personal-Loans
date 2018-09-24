@@ -1,16 +1,9 @@
 import React from 'react';
 import '../css/App.css';
 import Header from "./Header";
-import { Button, FormGroup, Label, Input } from 'reactstrap';
+import { Form, Button, FormGroup, Label, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import Select from 'react-select';
 import { ListGroup, ListGroupItem } from 'reactstrap';
-import {
-    Accordion,
-    AccordionItem,
-    AccordionItemTitle,
-    AccordionItemBody,
-} from 'react-accessible-accordion';
 
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
@@ -34,30 +27,43 @@ export default class Loans extends React.Component {
         estimatedRepayment:115
     }
     render() {
+        var second = false
         return (
             <div>
                 <Header/>
                 <img className={"homepage-background"} src={background} alt="" />
                 <div className={"contain"}>
                     <span className="left">
-                        <Accordion>
-                            <AccordionItem expanded="true">
-                                <AccordionItemTitle>
-                                    <h4>Your loan details</h4>
-                                </AccordionItemTitle>
-                                <AccordionItemBody>
-                                  <PersonalDetails/>
-                                </AccordionItemBody>
-                            </AccordionItem>
-                            <AccordionItem>
-                                <AccordionItemTitle>
-                                    <h4>Tell us about yourself</h4>
-                                </AccordionItemTitle>
-                                <AccordionItemBody>
-                                    <p>Body content</p>
-                                </AccordionItemBody>
-                            </AccordionItem>
-                        </Accordion>
+                        <Form>
+                            <div className={"form-section"}>
+                                <h4> Your loan details </h4>
+                                <PersonalDetails/>
+                            </div>
+
+                            <div className={"form-section"}>
+                                <h4> Tell us about yourself </h4>
+                                { second &&
+                                <PersonalDetails/>}
+                            </div>
+
+                            <div className={"form-section"}>
+                                <h4> Your employment details </h4>
+                                { second &&
+                                <PersonalDetails/>}
+                            </div>
+
+                            <div className={"form-section"}>
+                                <h4> Tell us about what you earn </h4>
+                                { second &&
+                                <PersonalDetails/>}
+                            </div>
+
+                            <div className={"last-form-section"}>
+                                <h4> Almost finished </h4>
+                                { second &&
+                                <PersonalDetails/>}
+                            </div>
+                        </Form>
                     </span>
                     <span className="right">
                         <LoanSummary

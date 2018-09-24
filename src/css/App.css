@@ -132,7 +132,6 @@ a:-webkit-any-link {
     font-size: 0.875em;
     line-height: 18px;
     position: absolute;
-    float:left;
     text-align: center;
     background-color: white;
     top: 10%;
@@ -229,4 +228,17 @@ a:-webkit-any-link {
 
 .disclaimer{
     font-size: 10px;
+}
+
+.form-section{
+    width: 90%;
+    margin: auto;
+    padding: 3%;
+    border-bottom: 1px solid black;
+}
+
+.last-form-section{
+    width: 90%;
+    margin: auto;
+    padding: 3%;
 }
