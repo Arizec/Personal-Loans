@@ -169,10 +169,10 @@ a:-webkit-any-link {
 .radio-button li {
     float: left;
     margin: 0px 0px 0px 0px;
-    width: 10%;
+    width: 15%;
     height: 40px;
     position: relative;
-    left:40%;
+    left:35%;
 }
 
 
