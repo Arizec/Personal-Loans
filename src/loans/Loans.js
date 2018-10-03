@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
-import PersonalDetails from "./loanItems/personalDetails/PersonalDetails";
+import LoanDetails from "./loanItems/loanlDetails/LoanDetails";
 import LoanSummary from "./loanSummary";
 
 const background = require('../assets/beach.png');
@@ -19,7 +19,7 @@ export default class Loans extends React.Component {
         super(props);
     }
     state={
-        personalDetails:<PersonalDetails/>
+        personalDetails:<LoanDetails/>
     }
 
 
@@ -42,25 +42,25 @@ export default class Loans extends React.Component {
                             <div className={"form-section"}>
                                 <h4> Tell us about yourself </h4>
                                 { second &&
-                                <PersonalDetails/>}
+                                <LoanDetails/>}
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Your employment details </h4>
                                 { second &&
-                                <PersonalDetails/>}
+                                <LoanDetails/>}
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Tell us about what you earn </h4>
                                 { second &&
-                                <PersonalDetails/>}
+                                <LoanDetails/>}
                             </div>
 
                             <div className={"last-form-section"}>
                                 <h4> Almost finished </h4>
                                 { second &&
-                                <PersonalDetails/>}
+                                <LoanDetails/>}
                             </div>
                         </Form>
                     </span>

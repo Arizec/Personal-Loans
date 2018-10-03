@@ -9,7 +9,7 @@ import RepaymentFrequencyOptions from "./RepaymentFrequencyOptions";
 import LoanTermOptions from "./LoanTermOptions";
 
 //Header for application
-export default class PersonalDetails extends React.Component {
+export default class LoanDetails extends React.Component {
 
     constructor (props) {
         super(props);
