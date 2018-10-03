@@ -1,9 +1,8 @@
 import React from 'react';
 import '../css/App.css';
 import Header from "./Header";
-import { Form, Button, FormGroup, Label, Input } from 'reactstrap';
+import { Form} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import { ListGroup, ListGroupItem } from 'reactstrap';
 
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
@@ -17,26 +16,17 @@ const background = require('../assets/beach.png');
 export default class Loans extends React.Component {
 
     constructor(props){
-        super(props)
-
-        this.state = {
-            loanDetails: true
-        }
+        super(props);
+    }
+    state={
+        personalDetails:<PersonalDetails/>
     }
 
-    state = {
-        numberOfPeople:2,
-        borrowAmount: 5000,
-        loanPeriod: 5,
-        estimatedRepayment:115
-    }
 
-    handleLanguage(langValue){
-        this.setState({loanDetails: langValue});
-    }
 
     render() {
         var second = false
+        console.log(this.state)
         return (
             <div>
                 <Header/>
@@ -46,9 +36,7 @@ export default class Loans extends React.Component {
                         <Form>
                             <div className={"form-section"}>
                                 <h4> Your loan details </h4>
-                                {   this.state.loanDetails &&
-                                    <PersonalDetails onSelectLanguage={this.handleLanguage}/>
-                                }
+                                    {this.state.personalDetails}
                             </div>
 
                             <div className={"form-section"}>
