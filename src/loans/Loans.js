@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import LoanDetails from "./loanItems/loanlDetails/LoanDetails";
 import LoanSummary from "./loanSummary";
+import PersonalDetails from "./loanItems/personalDetails/personalDetails";
 
 const background = require('../assets/beach.png');
 
@@ -19,14 +20,14 @@ export default class Loans extends React.Component {
         super(props);
     }
     state={
-        personalDetails:<LoanDetails/>
-    }
+        loanDetails:true,
+        personalDetails: true
 
+    }
 
 
     render() {
         var second = false
-        console.log(this.state)
         return (
             <div>
                 <Header/>
@@ -36,13 +37,14 @@ export default class Loans extends React.Component {
                         <Form>
                             <div className={"form-section"}>
                                 <h4> Your loan details </h4>
-                                    {this.state.personalDetails}
+                                    {this.state.loanDetails &&
+                                    <LoanDetails/>}
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Tell us about yourself </h4>
-                                { second &&
-                                <LoanDetails/>}
+                                { this.state.personalDetails &&
+                                <PersonalDetails/>}
                             </div>
 
                             <div className={"form-section"}>
