@@ -219,7 +219,10 @@ a:-webkit-any-link {
     background:#c20000;
     color:white;
 }
-
+.btn{
+    background-color:#c20000;
+    color:white;
+}
 .summary-title{
     color: #ffffff;
     text-align: left;

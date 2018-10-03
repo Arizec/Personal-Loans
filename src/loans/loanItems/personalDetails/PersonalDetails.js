@@ -58,9 +58,7 @@ export default class PersonalDetails extends React.Component {
                                 <label htmlFor="peopleNo2">2</label>
                             </li>
                         </ul><br/><br/>
-
                     </FormGroup>
-
 
                 </div>
                 <div className={"form-item-padding"} onChange={this.setIsExistingCustomer.bind(this)}>Are you an existing customer?
@@ -131,11 +129,12 @@ export default class PersonalDetails extends React.Component {
 
                     </FormGroup>
 
+
                 </div>
                 <LoanTermOptions/>
                 <RepaymentFrequencyOptions/>
                 <LoanPurposeOptions/>
-                <Button color="danger">Next</Button>
+                <Button color="#c20000">Next</Button>
             </div>
 
         );
