@@ -6,17 +6,19 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 import '../../../css/App.css';
 import Select from 'react-select';
 
-const title = [
-    { value: 'mr'  , label: 'Mr' },
-    { value: 'mrs' , label: 'Mrs' },
-    { value: 'miss', label: 'Miss' },
-    { value: 'ms'  , label: 'Ms' },
-    { value: 'dr'  , label: 'Dr' }
+
+const maritalStatus = [
+    { value: 'single'    , label: 'Single' },
+    { value: 'married'   , label: 'Married' },
+    { value: 'defacto'   , label: 'Defacto' },
+    { value: 'separated' , label: 'Separated' },
+    { value: 'divorced'  , label: 'Divorced' },
+    { value: 'widowed'   , label: 'Widowed' }
 ];
 
 
 //Header for application
-export default class Title extends React.Component {
+export default class MaritalStatus extends React.Component {
     state = {
         selectedOption: null,
     };
@@ -29,11 +31,11 @@ export default class Title extends React.Component {
     render() {
         const { selectedOption } = this.state;
         return (
-            <div className={"form-item-padding"}>What is the main purpose for this loan?
+            <div className={"form-item-padding"}>Marital status
                 <Select
                     value={selectedOption}
                     onChange={this.handleChange}
-                    options={title}/>
+                    options={maritalStatus}/>
             </div>
 
         );
