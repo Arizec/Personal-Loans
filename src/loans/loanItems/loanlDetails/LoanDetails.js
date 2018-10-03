@@ -13,18 +13,25 @@ export default class LoanDetails extends React.Component {
 
     constructor (props) {
         super(props);
+
+        this.state = {
+            peopleNo: "",
+            existingCustomer: "",
+            existingCustomer2: "",
+            show: true,
+            nabId: "",
+            nabId2:"",
+            amount:"",
+            loanType:"",
+            personalDetails: true
+        }
         this.handleClick=this.handleClick.bind(this)
 
     }
-    state = {
-        peopleNo: "",
-        existingCustomer: "",
-        existingCustomer2: "",
-        show: true,
-        nabId: "",
-        nabId2:"",
-        amount:"",
-        loanType:""
+
+    onChangeStateChild(){
+        this.handleClick();
+        this.props.changeState(this.state.personalDetails);
     }
 
 
@@ -124,7 +131,7 @@ export default class LoanDetails extends React.Component {
                 <LoanTermOptions/>
                 <RepaymentFrequencyOptions/>
                 <LoanPurposeOptions/>
-                <Button color="#c20000" onClick={this.handleClick}>Next</Button>
+                <Button color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
 
         );

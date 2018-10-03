@@ -18,11 +18,18 @@ export default class Loans extends React.Component {
 
     constructor(props){
         super(props);
-    }
-    state={
-        loanDetails:true,
-        personalDetails: true
+        this.state={
+            loanDetails:true,
+            personalDetails: false
 
+        }
+
+    }
+
+    onChangeState(isTrue){
+        this.setState({
+            personalDetails: true
+        });
     }
 
 
@@ -38,7 +45,7 @@ export default class Loans extends React.Component {
                             <div className={"form-section"}>
                                 <h4> Your loan details </h4>
                                     {this.state.loanDetails &&
-                                    <LoanDetails/>}
+                                    <LoanDetails changeState={this.onChangeState.bind(this)}/>}
                             </div>
 
                             <div className={"form-section"}>
