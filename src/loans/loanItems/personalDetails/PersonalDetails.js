@@ -1,9 +1,9 @@
 import React from 'react';
 import '../../../css/App.css';
-import { Button, FormGroup, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
+import Title from "./Title";
 
 
 //Header for application
@@ -18,7 +18,10 @@ export default class PersonalDetails extends React.Component {
 
         return(
             <div>
-                <h1> Testing this works</h1>
+                <h5> Personal details</h5>
+                <Title/>
+
+
             </div>
         )
 

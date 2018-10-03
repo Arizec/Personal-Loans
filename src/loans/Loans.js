@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import LoanDetails from "./loanItems/loanlDetails/LoanDetails";
 import LoanSummary from "./loanSummary";
-import PersonalDetails from "./loanItems/personalDetails/personalDetails";
+import PersonalDetails from "./loanItems/personalDetails/PersonalDetails";
 
 const background = require('../assets/beach.png');
 

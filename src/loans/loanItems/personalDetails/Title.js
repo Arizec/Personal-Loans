@@ -1,17 +1,23 @@
 import React from 'react';
 import '../../../css/App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+// Demo styles, see 'Styles' section below for some notes on use.
+import 'react-accessible-accordion/dist/fancy-example.css';
+import '../../../css/App.css';
 import Select from 'react-select';
 
 
 const loanPurposeOptions = [
-    { value: 'new-car', label: 'New car' },
-    { value: 'used-car', label: 'Used car' },
-    { value: 'debt-consolidation', label: 'Debt consolidation' }
+    { value: 'mr'  , label: 'Mr' },
+    { value: 'mrs' , label: 'Mrs' },
+    { value: 'miss', label: 'Miss' },
+    { value: 'ms'  , label: 'Ms' },
+    { value: 'dr'  , label: 'Dr' }
 ];
 
-//Header for application
-export default class LoanPurposeOptions extends React.Component {
 
+//Header for application
+export default class Title extends React.Component {
     state = {
         selectedOption: null,
     };
@@ -33,5 +39,4 @@ export default class LoanPurposeOptions extends React.Component {
 
         );
     }
-
 }
