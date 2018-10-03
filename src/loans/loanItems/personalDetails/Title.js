@@ -29,7 +29,8 @@ export default class Title extends React.Component {
     render() {
         const { selectedOption } = this.state;
         return (
-            <div className={"form-item-padding"}>What is the main purpose for this loan?
+            <div className={"form-item-padding"}>
+                What is the main purpose for this loan?
                 <Select
                     value={selectedOption}
                     onChange={this.handleChange}

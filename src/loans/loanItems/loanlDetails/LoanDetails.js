@@ -24,7 +24,8 @@ export default class LoanDetails extends React.Component {
             amount:"",
             loanType:"",
             personalDetails: true
-        }
+        };
+
         this.handleClick=this.handleClick.bind(this)
 
     }
