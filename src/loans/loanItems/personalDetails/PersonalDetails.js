@@ -5,8 +5,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { Button, Label, FormGroup, Input } from 'reactstrap';
 import Title from "./Title";
-import MaritalStatus from "./MaritalStatus";
-import FinancialDependants from "./FinancialDependants";
+import MaritalStatus from "./personalFormItems/MaritalStatus";
+import FinancialDependants from "./personalFormItems/FinancialDependants";
+import TaxPurposes from "./personalFormItems/TaxPurposes";
 
 
 //Header for application
@@ -15,14 +16,9 @@ export default class PersonalDetails extends React.Component {
     constructor (props) {
         super(props);
 
-        this.state = {
-            ausResident: ""
-        };
-
     }
 
     render() {
-
         return(
             <div>
 
@@ -59,22 +55,7 @@ export default class PersonalDetails extends React.Component {
                     Driver's licence number (Optional)
                     <Input type="text" name="licenceNo" id="licenceNo" />
                 </div>
-
-                <div className={"form-item-padding"} onChange={(event)=>{this.setState({peopleNo: event.target.value})}}>How many people are applying?
-                    <FormGroup>
-                        <ul className="radio-button">
-                            <li >
-                                <input type="radio" id="peopleNo1" name="peopleNo" value="ONE" checked={this.state.ausResident=="ONE"}/>
-                                <label htmlFor="peopleNo1">1</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="peopleNo2" name="peopleNo" value="TWO" checked={this.state.ausResident=="TWO"} />
-                                <label htmlFor="peopleNo2">2</label>
-                            </li>
-                        </ul><br/><br/>
-                    </FormGroup>
-
-                </div>
+                <TaxPurposes/>
             </div>
         )
 

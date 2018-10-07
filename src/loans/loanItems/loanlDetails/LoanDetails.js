@@ -4,9 +4,9 @@ import { Button, FormGroup, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
-import LoanPurposeOptions from "./LoanPurposeOptions";
-import RepaymentFrequencyOptions from "./RepaymentFrequencyOptions";
-import LoanTermOptions from "./LoanTermOptions";
+import LoanPurposeOptions from "./loanFormItems/LoanPurposeOptions";
+import RepaymentFrequencyOptions from "./loanFormItems/RepaymentFrequencyOptions";
+import LoanTermOptions from "./loanFormItems/LoanTermOptions";
 
 //Header for application
 export default class LoanDetails extends React.Component {

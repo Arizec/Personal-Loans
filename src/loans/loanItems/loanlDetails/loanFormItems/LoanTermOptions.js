@@ -1,16 +1,15 @@
 import React from 'react';
-import '../../../css/App.css';
+import '../../../../css/App.css';
 import Select from 'react-select';
 
-const repaymentFrequencyOptions = [
-    { value: 'weekly', label: 'Weekly' },
-    { value: 'fortnightly', label: 'Fortnightly' },
-    { value: 'monthly', label: 'Monthly' }
+const loanTermOptions = [
+    { value: '1yr', label: '1 year' },
+    { value: '2yrs', label: '2 years' },
+    { value: '3yrs', label: '3 years' }
 ];
 
-
 //Header for application
-export default class RepaymentFrequencyOptions extends React.Component {
+export default class LoanTermOptions extends React.Component {
 
     state = {
         selectedOption: null,
@@ -24,11 +23,12 @@ export default class RepaymentFrequencyOptions extends React.Component {
     render() {
         const { selectedOption } = this.state;
         return (
-            <div className={"form-item-padding"}>How often would you like to make repayments?
+            <div className={"form-item-padding"}>What loan term would you like?
                 <Select
                     value={selectedOption}
                     onChange={this.handleChange}
-                    options={repaymentFrequencyOptions}/>
+                    options={loanTermOptions}/>
+
             </div>
 
         );
