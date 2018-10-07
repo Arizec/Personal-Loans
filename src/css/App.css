@@ -254,3 +254,7 @@ button.editItem, button.editItem:hover{
     cursor: pointer;
     border-color:#ffffff;
 }
+
+.red-font{
+    color: red;
+}

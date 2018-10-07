@@ -48,11 +48,11 @@ export default class LoanDetails extends React.Component {
                     <FormGroup>
                         <ul className="radio-button">
                             <li >
-                                <input type="radio" id="peopleNo1" name="peopleNo" value="ONE" checked={this.state.peopleNo=="ONE"}/>
+                                <input type="radio" id="peopleNo1" name="peopleNo" value="ONE" checked={this.state.peopleNo === "ONE"}/>
                                 <label htmlFor="peopleNo1">1</label>
                             </li>
                             <li>
-                                <input type="radio" id="peopleNo2" name="peopleNo" value="TWO" checked={this.state.peopleNo=="TWO"} />
+                                <input type="radio" id="peopleNo2" name="peopleNo" value="TWO" checked={this.state.peopleNo==="TWO"} />
                                 <label htmlFor="peopleNo2">2</label>
                             </li>
                         </ul><br/><br/>
@@ -63,11 +63,11 @@ export default class LoanDetails extends React.Component {
                     <FormGroup>
                         <ul className="radio-button">
                             <li>
-                                <input type="radio" id="existingCustomerYes" name="existingCustomer" value="YES" checked={this.state.existingCustomer=="YES"}/>
+                                <input type="radio" id="existingCustomerYes" name="existingCustomer" value="YES" checked={this.state.existingCustomer==="YES"}/>
                                 <label htmlFor="existingCustomerYes">Yes</label>
                             </li>
                             <li>
-                                <input type="radio" id="existingCustomerNo" name="existingCustomer" value="NO" checked={this.state.existingCustomer=="NO"}/>
+                                <input type="radio" id="existingCustomerNo" name="existingCustomer" value="NO" checked={this.state.existingCustomer==="NO"}/>
                                 <label htmlFor="existingCustomerNo">No</label>
                             </li>
                         </ul><br/><br/>
@@ -87,11 +87,11 @@ export default class LoanDetails extends React.Component {
                         <FormGroup>
                             <ul className="radio-button">
                                 <li className>
-                                    <input type="radio" id="existingCustomer2Yes" name="existingCustomer2" value="YES" checked={this.state.existingCustomer2=="YES"}/>
+                                    <input type="radio" id="existingCustomer2Yes" name="existingCustomer2" value="YES" checked={this.state.existingCustomer2==="YES"}/>
                                     <label htmlFor="existingCustomer2Yes">Yes</label>
                                 </li>
                                 <li>
-                                    <input type="radio" id="existingCustomer2No" name="existingCustomer2" value="NO" checked={this.state.existingCustomer2=="NO"}/>
+                                    <input type="radio" id="existingCustomer2No" name="existingCustomer2" value="NO" checked={this.state.existingCustomer2==="NO"}/>
                                     <label htmlFor="existingCustomer2No">No</label>
                                 </li>
                             </ul><br/><br/>
@@ -116,11 +116,11 @@ export default class LoanDetails extends React.Component {
                     <FormGroup>
                         <ul className="radio-button">
                             <li>
-                                <input type="radio" id="variableInterest" name="interestRate" value="Variable" checked={this.state.loanType=="Variable"}/>
+                                <input type="radio" id="variableInterest" name="interestRate" value="Variable" checked={this.state.loanType==="Variable"}/>
                                 <label htmlFor="variableInterest">Variable</label>
                             </li>
                             <li>
-                                <input type="radio" id="fixedInterest" name="interestRate" value="Fixed" checked={this.state.loanType=="Fixed"}/>
+                                <input type="radio" id="fixedInterest" name="interestRate" value="Fixed" checked={this.state.loanType==="Fixed"}/>
                                 <label htmlFor="fixedInterest">Fixed</label>
                             </li>
                         </ul><br/><br/>
