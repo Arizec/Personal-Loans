@@ -3,9 +3,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
 import '../../../../css/App.css';
-import { Button, Label, FormGroup, Input } from 'reactstrap';
+import CountriesSelect from "react-form-countries-select";
+import { FormGroup, Input } from 'reactstrap';
 import Select from 'react-select';
 
+const noTinReason = [
+    { value: 'no-tin'        , label: "This country doesn't issue TINs" },
+    { value: 'not-mandatory' , label: "It's not mandatory for me to disclose my TIN for this country" },
+    { value: 'dont-have'     , label: "I don't have a TIN for this country" }
+];
 
 //Header for application
 export default class TaxPurposes extends React.Component {
@@ -13,6 +19,7 @@ export default class TaxPurposes extends React.Component {
         super(props);
 
         this.state = {
+            selectedOption: null,
             ausResident: "",
             usResident: "",
             otherCountryResident: ""
@@ -21,8 +28,20 @@ export default class TaxPurposes extends React.Component {
     }
 
 
-    render() {
+    handleChange = (selectedOption) => {
+        this.setState({ selectedOption });
+    };
 
+    onCountrySelect = (event, country) => {
+        // event {SyntheticEvent<HTMLSelectElement>} - React HTML event
+        // country {Object} - Object representing the state
+        // country.name {string} - The full name of the selected country
+        // country.abbreviation {string} - The two character country code
+    }
+
+
+    render() {
+        const { selectedOption } = this.state;
         return (
             <div>
                 <div className={"form-item-padding"} onChange={(event)=>{this.setState({ausResident: event.target.value})}}>
@@ -88,6 +107,37 @@ export default class TaxPurposes extends React.Component {
                     </FormGroup>
 
                 </div>
+                {
+                    this.state.otherCountryResident === "YES" &&
+                    <div>
+                        <div className={"form-item-padding"}>
+                            <CountriesSelect className={"max-width"} onChange={this.onCountrySelect} />
+                        </div>
+
+
+                        <div className={"form-item-padding"}>
+                            What is your US Taxpayer Identification Number (TIN)
+                            <Input type="text" name="usTIN" id="usTIN" />
+                        </div>
+                    </div>
+
+                }
+
+                {
+                    this.state.otherCountryResident === "NO" &&
+                    <div>
+
+                        <div className={"form-item-padding"}>
+                            Please indicate the reason you can't provide the TIN
+                            <Select
+                                value={selectedOption}
+                                onChange={this.handleChange}
+                                options={noTinReason}/>
+                        </div>
+                    </div>
+
+                }
+
             </div>
 
 

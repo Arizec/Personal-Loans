@@ -19,6 +19,17 @@ export default class PersonalDetails extends React.Component {
 
     }
 
+    onChangeStateChild(){
+        this.handleClick();
+        this.props.changeState(this.state.personalDetails);
+    }
+
+
+    handleClick(e)
+    {
+        this.setState({show:!this.state.show})
+    }
+
     render() {
         return(
             <div>
@@ -34,8 +45,9 @@ export default class PersonalDetails extends React.Component {
                     Driver's licence number (Optional)
                     <Input type="text" name="licenceNo" id="licenceNo" />
                 </div>
-
                 <TaxPurposes/>
+                <Button onClick={this.onChangeStateChild.bind(this)}>Previous</Button>
+                <Button color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
         )
 
