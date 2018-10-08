@@ -39,13 +39,11 @@ export default class Loans extends React.Component {
 
     }
 
-    onChangeState(response){
-        console.log(response)
+    onChangeLoanDetails(response){
         this.setState({
             personalDetailsSet: true
         });
-        this.state.loanDetailsProps.loanType = response.loanType;
-        this.state.loanDetailsProps.loanPurpose = response.loanPurpose;
+        this.state.loanDetailsProps = response;
     }
 
 
@@ -60,7 +58,7 @@ export default class Loans extends React.Component {
                         <Form>
                             <div className={"form-section"}>
                                 <h4> Your loan details </h4>
-                                    <LoanDetails changeState={this.onChangeState.bind(this)} loanDetails={this.state.loanDetailsProps}/>
+                                    <LoanDetails changeState={this.onChangeLoanDetails.bind(this)} loanDetails={this.state.loanDetailsProps}/>
                             </div>
 
                             <div className={"form-section"}>

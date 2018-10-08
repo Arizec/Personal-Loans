@@ -8,7 +8,6 @@ import Title from "./personalFormItems/Title";
 import MaritalStatus from "./personalFormItems/MaritalStatus";
 import FinancialDependants from "./personalFormItems/FinancialDependants";
 import TaxPurposes from "./personalFormItems/TaxPurposes";
-import NameAndDOB from "./personalFormItems/NameAndDOB";
 import IsAusResident from "./personalFormItems/IsAusResident";
 
 
@@ -44,6 +43,37 @@ export default class PersonalDetails extends React.Component {
         this.setState({show:!this.state.show})
     }
 
+    nameAndDOB() {
+
+        return (
+            <div>
+
+                <div className={"form-item-padding"}>
+                    First name
+                    <Input type="text" name="firstName" id="firstName" />
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Middle name (Optional)
+                    <Input type="text" name="middleName" id="middleName" />
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Last name
+                    <Input type="text" name="lastName" id="lastName" />
+                </div>
+
+                <div className={"form-item-padding"}>
+                    <FormGroup>
+                        <Label for="exampleDate">Date of birth</Label>
+                        <Input type="date" name="date" id="exampleDate" placeholder="date placeholder" />
+                    </FormGroup>
+                </div>
+            </div>
+
+        );
+    }
+
     showDetails() {
         return(
             <div>
@@ -51,7 +81,7 @@ export default class PersonalDetails extends React.Component {
                 <h5> Personal details</h5>
 
                 <Title/>
-                <NameAndDOB/>
+                {this.nameAndDOB()}
                 <MaritalStatus/>
                 <FinancialDependants/>
 
