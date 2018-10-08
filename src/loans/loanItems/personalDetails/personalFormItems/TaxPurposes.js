@@ -1,7 +1,5 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-// Demo styles, see 'Styles' section below for some notes on use.
-import 'react-accessible-accordion/dist/fancy-example.css';
 import '../../../../css/App.css';
 import CountriesSelect from "react-form-countries-select";
 import { FormGroup, Input } from 'reactstrap';

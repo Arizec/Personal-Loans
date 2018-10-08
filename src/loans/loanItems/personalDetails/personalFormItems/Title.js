@@ -1,8 +1,6 @@
 import React from 'react';
 import '../../../../css/App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-// Demo styles, see 'Styles' section below for some notes on use.
-import 'react-accessible-accordion/dist/fancy-example.css';
 import Select from 'react-select';
 
 const title = [
