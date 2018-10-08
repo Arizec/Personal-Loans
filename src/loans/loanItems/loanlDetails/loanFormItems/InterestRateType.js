@@ -8,14 +8,22 @@ export default class InterestRateType extends React.Component {
         super(props);
 
         this.state = {
-            loanType:""
+            loanType:this.props.loanType
         };
+
+        this.saveLoanType=this.saveLoanType.bind(this)
 
     }
 
+    saveLoanType(event){
+        this.setState({loanType: event.target.value});
+        this.props.saveLoanType(event.target.value);
+    }
+
+
     render() {
         return (
-            <div className={"form-item-padding" } onChange={(event)=>{this.setState({loanType: event.target.value})}}>Would you like a fixed or variable interest rate?
+            <div className={"form-item-padding" } onChange={this.saveLoanType}>Would you like a fixed or variable interest rate?
                 <FormGroup>
                     <ul className="radio-button">
                         <li>
