@@ -22,7 +22,12 @@ export default class Loans extends React.Component {
             loanDetails:true,
             loanDetailsProps: {
                 amount:"",
-                loanType:""
+                loanType:"",
+                peopleNo: "",
+                existingCustomer: "",
+                existingCustomer2: "",
+                nabId: "",
+                nabId2:""
             },
             personalDetailsSet: false,
 
