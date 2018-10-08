@@ -23,17 +23,17 @@ export default class LoanDetails extends React.Component {
             existingCustomer: this.props.loanDetails.existingCustomer,
             existingCustomer2: this.props.loanDetails.existingCustomer2,
             nabId: this.props.loanDetails.nabId,
-            nabId2:this.props.loanDetails.nabId2
+            nabId2:this.props.loanDetails.nabId2,
+            loanPurpose: this.props.loanDetails.loanPurpose,
         };
 
         this.handleClick=this.handleClick.bind(this)
 
     }
 
-    saveCustomerDetails(type){
-        console.log(type);
+    saveLoanPurpose(type){
         this.setState({
-            peopleNo: type
+            loanPurpose: type
         });
     }
 
@@ -153,7 +153,7 @@ export default class LoanDetails extends React.Component {
                 {this.interestRateType()}
                 <LoanTermOptions/>
                 <RepaymentFrequencyOptions/>
-                <LoanPurposeOptions/>
+                <LoanPurposeOptions saveLoanPurpose={this.saveLoanPurpose.bind(this)} loanPurpose={this.state.loanPurpose}/>
                 <Button color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
 
@@ -161,7 +161,6 @@ export default class LoanDetails extends React.Component {
     }
 
     render() {
-        console.log("hurr",this.state.loanType);
         if(this.state.show){
             return this.showDetails()
         }

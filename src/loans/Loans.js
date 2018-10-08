@@ -27,7 +27,8 @@ export default class Loans extends React.Component {
                 existingCustomer: "",
                 existingCustomer2: "",
                 nabId: "",
-                nabId2:""
+                nabId2:"",
+                loanPurpose: null
             },
             personalDetailsSet: false,
 
@@ -37,11 +38,12 @@ export default class Loans extends React.Component {
     }
 
     onChangeState(response){
-        console.log(response.loanType)
+        console.log(response.loanPurpose)
         this.setState({
             personalDetailsSet: true
         });
         this.state.loanDetailsProps.loanType = response.loanType;
+        this.state.loanDetailsProps.loanPurpose = response.loanPurpose;
     }
 
 

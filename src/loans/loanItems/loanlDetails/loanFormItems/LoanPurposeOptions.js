@@ -11,17 +11,30 @@ const loanPurposeOptions = [
 
 //Header for application
 export default class LoanPurposeOptions extends React.Component {
+    constructor (props) {
+        super(props);
+        console.log("print", this.props.loanPurpose)
+        this.state = {
+            selectedOption: this.props.loanPurpose,
+        };
 
-    state = {
-        selectedOption: null,
-    };
+        this.saveLoanPurpose=this.saveLoanPurpose.bind(this)
+
+    }
+
+    saveLoanPurpose(selectedOption){
+        this.props.saveLoanPurpose(selectedOption);
+    }
 
     handleChange = (selectedOption) => {
+        console.log(selectedOption);
         this.setState({ selectedOption });
+        this.saveLoanPurpose(selectedOption);
     };
 
 
     render() {
+
         const { selectedOption } = this.state;
         return (
             <div className={"form-item-padding"}>What is the main purpose for this loan?
