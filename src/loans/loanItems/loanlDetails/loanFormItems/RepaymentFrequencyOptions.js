@@ -11,14 +11,28 @@ const repaymentFrequencyOptions = [
 
 //Header for application
 export default class RepaymentFrequencyOptions extends React.Component {
+    constructor (props) {
 
-    state = {
-        selectedOption: null,
+        super(props);
+
+        console.log(this.props.repaymentFrequency);
+
+        this.state = {
+            selectedOption: this.props.repaymentFrequency,
+        };
+
+        this.saveRepaymentFrequency=this.saveRepaymentFrequency.bind(this)
+
+    }
+
+    saveRepaymentFrequency(selectedOption){
+        this.props.saveRepaymentFrequency(selectedOption);
     }
 
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
-    }
+        this.saveRepaymentFrequency(selectedOption);
+    };
 
 
     render() {

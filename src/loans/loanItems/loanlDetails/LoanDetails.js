@@ -25,15 +25,29 @@ export default class LoanDetails extends React.Component {
             nabId: this.props.loanDetails.nabId,
             nabId2:this.props.loanDetails.nabId2,
             loanPurpose: this.props.loanDetails.loanPurpose,
+            loanTerm: this.props.loanDetails.loanTerm,
+            repaymentFrequency: this.props.loanDetails.repaymentFrequency
         };
 
         this.handleClick=this.handleClick.bind(this)
 
     }
 
+    saveLoanTerm(type){
+        this.setState({
+            loanTerm: type
+        });
+    }
+
     saveLoanPurpose(type){
         this.setState({
             loanPurpose: type
+        });
+    }
+
+    saveRepaymentFrequency(type){
+        this.setState({
+            repaymentFrequency: type
         });
     }
 
@@ -151,8 +165,8 @@ export default class LoanDetails extends React.Component {
                     <Input type="text" name="loanAmount" id="loanAmount" placeholder={"$ "} onBlur={(event)=>{this.setState({amount: event.target.value})}} />
                 </div>
                 {this.interestRateType()}
-                <LoanTermOptions/>
-                <RepaymentFrequencyOptions/>
+                <LoanTermOptions saveLoanTerm={this.saveLoanTerm.bind(this)} loanTerm={this.state.loanTerm}/>
+                <RepaymentFrequencyOptions saveRepaymentFrequency={this.saveRepaymentFrequency.bind(this)} repaymentFrequency={this.state.repaymentFrequency}/>
                 <LoanPurposeOptions saveLoanPurpose={this.saveLoanPurpose.bind(this)} loanPurpose={this.state.loanPurpose}/>
                 <Button color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>

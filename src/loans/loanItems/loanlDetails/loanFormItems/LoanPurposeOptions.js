@@ -13,7 +13,6 @@ const loanPurposeOptions = [
 export default class LoanPurposeOptions extends React.Component {
     constructor (props) {
         super(props);
-        console.log("print", this.props.loanPurpose)
         this.state = {
             selectedOption: this.props.loanPurpose,
         };
@@ -27,7 +26,6 @@ export default class LoanPurposeOptions extends React.Component {
     }
 
     handleChange = (selectedOption) => {
-        console.log(selectedOption);
         this.setState({ selectedOption });
         this.saveLoanPurpose(selectedOption);
     };
