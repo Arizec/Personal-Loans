@@ -20,7 +20,7 @@ export default class LoanDetails extends React.Component {
             show: true,
             amount:"",
             loanType:"",
-            personalDetails: true
+            personalDetailsSet: true
         };
 
         this.handleClick=this.handleClick.bind(this)
@@ -29,7 +29,7 @@ export default class LoanDetails extends React.Component {
 
     onChangeStateChild(){
         this.handleClick();
-        this.props.changeState(this.state.personalDetails);
+        this.props.changeState(this.state.personalDetailsSet);
     }
 
 
@@ -43,7 +43,7 @@ export default class LoanDetails extends React.Component {
             <div>
                 <ExistingCustomer/>
                 <div className={"form-item-padding"}>How much would you like to borrow?
-                    <Input type="text" name="loanAmount" id="loanAmount" placeholder={"$ "+this.state.nabId2} onBlur={(event)=>{this.setState({amount: event.target.value})}} />
+                    <Input type="text" name="loanAmount" id="loanAmount" placeholder={"$ "} onBlur={(event)=>{this.setState({amount: event.target.value})}} />
                 </div>
                 <InterestRateType/>
                 <LoanTermOptions/>

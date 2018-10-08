@@ -20,7 +20,7 @@ export default class Loans extends React.Component {
         super(props);
         this.state={
             loanDetails:true,
-            personalDetails: false
+            personalDetailsSet: false
 
         }
 
@@ -28,7 +28,7 @@ export default class Loans extends React.Component {
 
     onChangeState(isTrue){
         this.setState({
-            personalDetails: true
+            personalDetailsSet: true
         });
     }
 
@@ -44,13 +44,12 @@ export default class Loans extends React.Component {
                         <Form>
                             <div className={"form-section"}>
                                 <h4> Your loan details </h4>
-                                    {this.state.loanDetails &&
-                                    <LoanDetails changeState={this.onChangeState.bind(this)}/>}
+                                    <LoanDetails changeState={this.onChangeState.bind(this)}/>
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Tell us about yourself </h4>
-                                { this.state.personalDetails &&
+                                { this.state.personalDetailsSet &&
                                 <PersonalDetails/>}
                             </div>
 

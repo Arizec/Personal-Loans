@@ -17,11 +17,17 @@ export default class PersonalDetails extends React.Component {
     constructor (props) {
         super(props);
 
+        this.state = {
+            show: true
+        };
+
+
+        this.handleClick=this.handleClick.bind(this)
+
     }
 
     onChangeStateChild(){
         this.handleClick();
-        this.props.changeState(this.state.personalDetails);
     }
 
 
@@ -30,7 +36,7 @@ export default class PersonalDetails extends React.Component {
         this.setState({show:!this.state.show})
     }
 
-    render() {
+    showDetails() {
         return(
             <div>
 
@@ -50,6 +56,17 @@ export default class PersonalDetails extends React.Component {
                 <Button color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
         )
+    }
+
+    render() {
+        if(this.state.show){
+            return this.showDetails()
+        }
+        else{
+            return(
+                <Button className="editItem" onClick={this.handleClick}>+ Edit these details</Button>
+            )
+        }
 
     }
 
