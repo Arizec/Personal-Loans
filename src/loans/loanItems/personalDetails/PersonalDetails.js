@@ -9,6 +9,7 @@ import MaritalStatus from "./personalFormItems/MaritalStatus";
 import FinancialDependants from "./personalFormItems/FinancialDependants";
 import TaxPurposes from "./personalFormItems/TaxPurposes";
 import NameAndDOB from "./personalFormItems/NameAndDOB";
+import IsAusResident from "./personalFormItems/IsAusResident";
 
 
 //Header for application
@@ -18,12 +19,19 @@ export default class PersonalDetails extends React.Component {
         super(props);
 
         this.state = {
-            show: true
+            show: true,
+            ausResidentSet: ""
         };
 
 
         this.handleClick=this.handleClick.bind(this)
 
+    }
+
+    isAusResident(isTrue){
+        this.setState({
+            ausResidentSet: isTrue
+        });
     }
 
     onChangeStateChild(){
@@ -51,7 +59,11 @@ export default class PersonalDetails extends React.Component {
                     Driver's licence number (Optional)
                     <Input type="text" name="licenceNo" id="licenceNo" />
                 </div>
-                <TaxPurposes/>
+                <TaxPurposes isAusResident={this.isAusResident.bind(this)}/>
+                {
+                    this.state.ausResidentSet === "YES" &&
+                        <IsAusResident/>
+                }
                 <Button onClick={this.onChangeStateChild.bind(this)}>Previous</Button>
                 <Button color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
@@ -59,6 +71,7 @@ export default class PersonalDetails extends React.Component {
     }
 
     render() {
+
         if(this.state.show){
             return this.showDetails()
         }

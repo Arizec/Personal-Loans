@@ -23,12 +23,21 @@ export default class TaxPurposes extends React.Component {
             otherCountryResident: ""
         };
 
+        this.isAusResident=this.isAusResident.bind(this)
+
     }
 
 
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
     };
+
+
+    isAusResident(event){
+        this.setState({ausResident: event.target.value});
+        this.props.isAusResident(event.target.value);
+    }
+
 
     onCountrySelect = (event, country) => {
         // event {SyntheticEvent<HTMLSelectElement>} - React HTML event
@@ -42,7 +51,7 @@ export default class TaxPurposes extends React.Component {
         const { selectedOption } = this.state;
         return (
             <div>
-                <div className={"form-item-padding"} onChange={(event)=>{this.setState({ausResident: event.target.value})}}>
+                <div className={"form-item-padding"} onChange={this.isAusResident}>
                     Are you an Australian resident for tax purposes?
                     <FormGroup>
                         <ul className="radio-button">
