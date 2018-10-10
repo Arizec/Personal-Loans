@@ -9,6 +9,7 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 import LoanDetails from "./loanItems/loanlDetails/LoanDetails";
 import LoanSummary from "./loanSummary";
 import PersonalDetails from "./loanItems/personalDetails/PersonalDetails";
+import EmploymentDetails from "./loanItems/employmentDetails/EmploymentDetails";
 
 const background = require('../assets/beach.png');
 
@@ -20,6 +21,8 @@ export default class Loans extends React.Component {
         super(props);
         this.state={
             loanDetails:true,
+            personalDetailsSet: false,
+            employmentDetailsSet: false,
             loanDetailsProps: {
                 amount:"",
                 loanType:"",
@@ -31,8 +34,7 @@ export default class Loans extends React.Component {
                 loanPurpose: null,
                 loanTerm: null,
                 repaymentFrequency: null
-            },
-            personalDetailsSet: false,
+            }
 
 
         }
@@ -46,9 +48,16 @@ export default class Loans extends React.Component {
         this.state.loanDetailsProps = response;
     }
 
+    onChangePersonalDetails(response){
+        this.setState({
+            employmentDetailsSet: true
+        });
+    }
+
+
 
     render() {
-        var second = false
+        var second = false;
         return (
             <div>
                 <Header/>
@@ -64,13 +73,13 @@ export default class Loans extends React.Component {
                             <div className={"form-section"}>
                                 <h4> Tell us about yourself </h4>
                                 { this.state.personalDetailsSet &&
-                                <PersonalDetails/>}
+                                <PersonalDetails changeState={this.onChangePersonalDetails.bind(this)} />}
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Your employment details </h4>
-                                { second &&
-                                <LoanDetails/>}
+                                { this.state.employmentDetailsSet &&
+                                <EmploymentDetails/>}
                             </div>
 
                             <div className={"form-section"}>

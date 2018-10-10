@@ -35,6 +35,7 @@ export default class PersonalDetails extends React.Component {
 
     onChangeStateChild(){
         this.handleClick();
+        this.props.changeState(this.state);
     }
 
 

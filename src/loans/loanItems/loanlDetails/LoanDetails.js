@@ -18,7 +18,6 @@ export default class LoanDetails extends React.Component {
             show: true,
             amount: this.props.loanDetails.amount,
             loanType:this.props.loanDetails.loanType,
-            personalDetailsSet: true,
             peopleNo: this.props.loanDetails.peopleNo,
             existingCustomer: this.props.loanDetails.existingCustomer,
             existingCustomer2: this.props.loanDetails.existingCustomer2,
