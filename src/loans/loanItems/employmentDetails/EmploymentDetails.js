@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../css/App.css';
-import { FormGroup, Button, Input } from 'reactstrap';
+import { Label, FormGroup, Button, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import EmploymentStatus from "./employmentFormItems/EmploymentStatus";
 //Header for application
@@ -48,9 +48,46 @@ export default class EmploymentDetails extends React.Component {
                     <Input type="text" name="jobTitle" id="jobTitle" />
                 </div>
 
+                <div className={"form-item-padding"}>
+                    <FormGroup>
+                        <Label for="exampleDate">When did you start working here?</Label>
+                        <Input type="date" name="date" id="exampleDate" placeholder="date placeholder" />
+                    </FormGroup>
+                </div>
+
             </div>
             )
 
+    }
+
+    selfEmployed(){
+        return(
+            <div>
+
+                <div className={"form-item-padding"}>
+                    <FormGroup>
+                        <Label for="exampleDate">When did you start this company?</Label>
+                        <Input type="date" name="date" id="exampleDate" placeholder="date placeholder" />
+                    </FormGroup>
+                </div>
+
+            </div>
+        )
+    }
+
+    otherReasons(){
+        return(
+            <div>
+
+                <div className={"form-item-padding"}>
+                    <FormGroup>
+                        <Label for="exampleDate">When did this status commence?</Label>
+                        <Input type="date" name="date" id="exampleDate" placeholder="date placeholder" />
+                    </FormGroup>
+                </div>
+
+            </div>
+        )
     }
 
     showDetails(){
@@ -63,8 +100,16 @@ export default class EmploymentDetails extends React.Component {
         return (
             <div>
                <EmploymentStatus saveEmploymentStatus={this.saveEmploymentStatus.bind(this)} employmentStatus={this.state.employmentStatus}/>
-                {optionChosen === 'full-time'&&
+                {(optionChosen === 'full-time' || optionChosen === 'part-time' || optionChosen === 'casual'
+                    || optionChosen === 'contractor') &&
                     this.employed()}
+
+                {(optionChosen === 'self-employed') &&
+                this.selfEmployed()}
+
+                {(optionChosen === 'retired' || optionChosen === 'home-duties' || optionChosen === 'student'
+                    || optionChosen === 'unemployed') &&
+                this.otherReasons()}
 
             </div>
 

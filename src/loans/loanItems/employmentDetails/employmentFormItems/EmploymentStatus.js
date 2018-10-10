@@ -10,7 +10,7 @@ const employmentStatus = [
     { value: 'casual'       , label: 'Casual' },
     { value: 'self-employed', label: 'Self-employed' },
     { value: 'contractor'   , label: 'Contractor' },
-    { value: 'retied'       , label: 'Retired' },
+    { value: 'retired'       , label: 'Retired' },
     { value: 'home-duties'  , label: 'Home Duties' },
     { value: 'student'      , label: 'Student' },
     { value: 'unemployed'   , label: 'Unemployed' }
