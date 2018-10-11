@@ -3,7 +3,7 @@ import '../../../css/App.css';
 import { Label, FormGroup, Button, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-export default class LiabilityDetails extends React.Component {
+export default class AlmostFinishedDetails extends React.Component {
 
     constructor (props) {
         super(props);
@@ -19,7 +19,6 @@ export default class LiabilityDetails extends React.Component {
 
     onChangeStateChild(){
         this.handleClick();
-        this.props.changeState(this.state);
     }
 
 
@@ -31,8 +30,8 @@ export default class LiabilityDetails extends React.Component {
     showDetails(){
         return (
             <div>
-                <h6>-- INPUT INFO @ /liabilityDetails ---</h6>
-                <Button className={"next-button"} color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
+                <h6>-- INPUT INFO @ /almostFinished ---</h6>
+
             </div>
 
         );

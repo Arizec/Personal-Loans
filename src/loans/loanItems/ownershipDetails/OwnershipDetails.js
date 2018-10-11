@@ -31,7 +31,7 @@ export default class OwnershipDetails extends React.Component {
     showDetails(){
         return (
             <div>
-                <h6>-- INPUT INFO HERE ---</h6>
+                <h6>-- INPUT INFO @ /ownershipDetails ---</h6>
                 <Button className={"next-button"} color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
 

@@ -13,6 +13,9 @@ import EmploymentDetails from "./loanItems/employmentDetails/EmploymentDetails";
 import IncomeDetails from "./loanItems/incomeDetails/IncomeDetails";
 import OwnershipDetails from "./loanItems/ownershipDetails/OwnershipDetails";
 import LiabilityDetails from "./loanItems/liabilityDetails/LiabilityDetails";
+import ExpenseDetails from "./loanItems/expenseDetails/ExpenseDetails";
+import ProtectingLoanDetails from "./loanItems/protectingLoanDetails/ProtectingLoanDetails";
+import AlmostFinishedDetails from "./loanItems/almostFinished/almostFinishedDetails";
 
 const background = require('../assets/beach.png');
 
@@ -31,6 +34,9 @@ export default class Loans extends React.Component {
             incomeDetailsSet: false,
             ownershipDetailsSet: false,
             liabilityDetailsSet: false,
+            expenseDetailsSet: false,
+            protectingLoanSet: false,
+            almostFinishedSet: false,
             loanDetailsProps: {
                 amount:"",
                 loanType:"",
@@ -89,6 +95,27 @@ export default class Loans extends React.Component {
         });
     }
 
+    // user has submitted information pertaining to LIABILITIES
+    onChangeLiabilityDetails(response){
+        this.setState({
+            expenseDetailsSet: true
+        });
+    }
+
+    // user has submitted information pertaining to EXPENSES
+    onChangeExpensesDetails(response){
+        this.setState({
+            protectingLoanSet: true
+        });
+    }
+
+    // user has submitted information pertaining to PROTECTING LOAN DETAILS
+    onChangeProtectingLoanDetails(response){
+        this.setState({
+            almostFinishedSet: true
+        });
+    }
+
     // Display form
     render() {
         var second = false;
@@ -131,25 +158,25 @@ export default class Loans extends React.Component {
                             <div className={"form-section"}>
                                 <h4> Tell us about what you owe </h4>
                                 { this.state.liabilityDetailsSet &&
-                                <LiabilityDetails/>}
+                                <LiabilityDetails changeState={this.onChangeLiabilityDetails.bind(this)}/>}
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Your expenses </h4>
-                                { second &&
-                                <LoanDetails/>}
+                                { this.state.expenseDetailsSet &&
+                                <ExpenseDetails changeState={this.onChangeExpensesDetails.bind(this)}/>}
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Protecting your loan </h4>
-                                { second &&
-                                <LoanDetails/>}
+                                { this.state.protectingLoanSet &&
+                                <ProtectingLoanDetails changeState={this.onChangeProtectingLoanDetails.bind(this)}/>}
                             </div>
 
                             <div className={"last-form-section"}>
                                 <h4> Almost finished </h4>
-                                { second &&
-                                <LoanDetails/>}
+                                { this.state.almostFinishedSet &&
+                                <AlmostFinishedDetails/>}
                             </div>
                         </Form>
                     </span>
