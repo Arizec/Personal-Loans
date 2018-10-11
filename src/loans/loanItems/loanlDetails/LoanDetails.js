@@ -2,6 +2,8 @@ import React from 'react';
 import '../../../css/App.css';
 import { FormGroup, Button, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+// Demo styles, see 'Styles' section below for some notes on use.
+import 'react-accessible-accordion/dist/fancy-example.css';
 import LoanPurposeOptions from "./loanFormItems/LoanPurposeOptions";
 import RepaymentFrequencyOptions from "./loanFormItems/RepaymentFrequencyOptions";
 import LoanTermOptions from "./loanFormItems/LoanTermOptions";
@@ -14,7 +16,7 @@ export default class LoanDetails extends React.Component {
 
         this.state = {
             show: true,
-            amount: this.props.loanDetails.amount,
+            amount: this.props.loanDetails.loanAmount,
             loanType:this.props.loanDetails.loanType,
             peopleNo: this.props.loanDetails.peopleNo,
             existingCustomer: this.props.loanDetails.existingCustomer,
@@ -57,7 +59,7 @@ export default class LoanDetails extends React.Component {
         this.props.changeState(this.state);
     }
 
-   // close section
+
     handleClick(e)
     {
         this.setState({show:!this.state.show})
@@ -101,7 +103,7 @@ export default class LoanDetails extends React.Component {
                 {
                     this.state.existingCustomer === "YES" &&
                     <div className={"form-item-padding"}>What is your NAB Id? (optional)
-                        <Input type="text" name="nabID" id="nabID" placeholder={this.state.nabId} onBlur={(event)=>{this.setState({nabId: event.target.value})}} />
+                        <Input type="text" name="nabID" id="nabID" placeholder={this.state.nabId} onChange={(event)=>{this.setState({nabId: event.target.value})}} />
                     </div>
                 }
                 {this.state.peopleNo === "TWO" &&
@@ -126,7 +128,7 @@ export default class LoanDetails extends React.Component {
                 {
                     this.state.existingCustomer2 === "YES" &&
                     <div className={"form-item-padding"}>What is the other persons NAB Id? (optional)
-                        <Input type="text" name="nabID2" id="nabID2" placeholder={this.state.nabId2} onBlur={(event)=>{this.setState({nabId2: event.target.value})}}/>
+                        <Input type="text" name="nabID2" id="nabID2" placeholder={this.state.nabId2} onChange={(event)=>{this.setState({nabId2: event.target.value})}}/>
                     </div>
                 }
             </div>
@@ -163,7 +165,7 @@ export default class LoanDetails extends React.Component {
             <div>
                 {this.customerDetails()}
                 <div className={"form-item-padding"}>How much would you like to borrow?
-                    <Input type="text" name="loanAmount" id="loanAmount" placeholder={"$ "} onBlur={(event)=>{this.setState({amount: event.target.value})}} />
+                    <Input type="text" name="loanAmount" id="loanAmount" placeholder={"$ "} value={this.state.loanAmount} onChange={(event)=>{this.setState({loanAmount: event.target.value})}} />
                 </div>
                 {this.interestRateType()}
                 <LoanTermOptions saveLoanTerm={this.saveLoanTerm.bind(this)} loanTerm={this.state.loanTerm}/>

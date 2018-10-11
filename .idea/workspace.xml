@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d786d7d-fd76-4b12-a1cf-0c2a5c99db99" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/loans/loanItems/almostFinished/almostFinishedDetails.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/loans/loanItems/expenseDetails/ExpenseDetails.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/loans/loanItems/protectingLoanDetails/ProtectingLoanDetails.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/loans/Loans.js" afterPath="$PROJECT_DIR$/src/loans/Loans.js" />
-      <change beforePath="$PROJECT_DIR$/src/loans/loanItems/liabilityDetails/LiabilityDetails.js" afterPath="$PROJECT_DIR$/src/loans/loanItems/liabilityDetails/LiabilityDetails.js" />
-      <change beforePath="$PROJECT_DIR$/src/loans/loanItems/ownershipDetails/OwnershipDetails.js" afterPath="$PROJECT_DIR$/src/loans/loanItems/ownershipDetails/OwnershipDetails.js" />
+      <change beforePath="$PROJECT_DIR$/src/loans/loanItems/employmentDetails/EmploymentDetails.js" afterPath="$PROJECT_DIR$/src/loans/loanItems/employmentDetails/EmploymentDetails.js" />
+      <change beforePath="$PROJECT_DIR$/src/loans/loanItems/loanlDetails/LoanDetails.js" afterPath="$PROJECT_DIR$/src/loans/loanItems/loanlDetails/LoanDetails.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -57,47 +54,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Loans.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Loans.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/loans/Loans.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1636">
-              <caret line="168" column="0" lean-forward="true" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
-              <folding>
-                <element signature="e#227#286#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LiabilityDetails.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loans/loanItems/liabilityDetails/LiabilityDetails.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExpenseDetails.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/loans/loanItems/expenseDetails/ExpenseDetails.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="33" column="51" lean-forward="false" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OwnershipDetails.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loans/loanItems/ownershipDetails/OwnershipDetails.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+            <state relative-caret-position="300">
+              <caret line="65" column="34" lean-forward="true" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -108,48 +69,22 @@
       <file leaf-file-name="LoanDetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/loans/loanItems/loanlDetails/LoanDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="56" column="43" lean-forward="true" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="43" />
+            <state relative-caret-position="384">
+              <caret line="167" column="122" lean-forward="false" selection-start-line="167" selection-start-column="92" selection-end-line="167" selection-end-column="122" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#222#281#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IncomeDetails.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loans/loanItems/incomeDetails/IncomeDetails.js">
+      <file leaf-file-name="EmploymentStatus.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/loans/loanItems/employmentDetails/employmentFormItems/EmploymentStatus.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmploymentDetails.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loans/loanItems/employmentDetails/EmploymentDetails.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="115" column="124" lean-forward="true" selection-start-line="115" selection-start-column="15" selection-end-line="115" selection-end-column="124" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonalDetails.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loans/loanItems/personalDetails/PersonalDetails.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#167#226#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="600">
+              <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -165,9 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>333</find>
-      <find>div</find>
-      <find>event.targ</find>
       <find>repaymentfre</find>
       <find>setIs</find>
       <find>position</find>
@@ -195,10 +127,14 @@
       <find>z-index</find>
       <find>contain</find>
       <find>left</find>
+      <find>onBlur</find>
+      <find>how much would</find>
+      <find>amount</find>
     </findStrings>
     <replaceStrings>
       <replace>LoanDetails</replace>
       <replace />
+      <replace>onChange</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -239,15 +175,15 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/loans/loanSummary.js" />
         <option value="$PROJECT_DIR$/src/loans/loanItems/personalDetails/PersonalDetails.js" />
-        <option value="$PROJECT_DIR$/src/loans/loanItems/loanlDetails/LoanDetails.js" />
-        <option value="$PROJECT_DIR$/src/loans/loanItems/employmentDetails/EmploymentDetails.js" />
         <option value="$PROJECT_DIR$/src/loans/loanItems/incomeDetails/IncomeDetails.js" />
-        <option value="$PROJECT_DIR$/src/loans/Loans.js" />
         <option value="$PROJECT_DIR$/src/loans/loanItems/almostFinished/almostFinishedDetails.js" />
         <option value="$PROJECT_DIR$/src/loans/loanItems/protectingLoanDetails/ProtectingLoanDetails.js" />
         <option value="$PROJECT_DIR$/src/loans/loanItems/liabilityDetails/LiabilityDetails.js" />
         <option value="$PROJECT_DIR$/src/loans/loanItems/ownershipDetails/OwnershipDetails.js" />
         <option value="$PROJECT_DIR$/src/loans/loanItems/expenseDetails/ExpenseDetails.js" />
+        <option value="$PROJECT_DIR$/src/loans/loanItems/loanlDetails/LoanDetails.js" />
+        <option value="$PROJECT_DIR$/src/loans/loanItems/employmentDetails/EmploymentDetails.js" />
+        <option value="$PROJECT_DIR$/src/loans/Loans.js" />
       </list>
     </option>
   </component>
@@ -338,7 +274,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="loans" type="462c0819:PsiDirectoryNode" />
               <item name="loanItems" type="462c0819:PsiDirectoryNode" />
-              <item name="incomeDetails" type="462c0819:PsiDirectoryNode" />
+              <item name="employmentDetails" type="462c0819:PsiDirectoryNode" />
+              <item name="employmentFormItems" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gabby-loans" type="b2602c69:ProjectViewProjectNode" />
@@ -347,14 +284,6 @@
               <item name="loans" type="462c0819:PsiDirectoryNode" />
               <item name="loanItems" type="462c0819:PsiDirectoryNode" />
               <item name="loanlDetails" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gabby-loans" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gabby-loans" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="loans" type="462c0819:PsiDirectoryNode" />
-              <item name="loanItems" type="462c0819:PsiDirectoryNode" />
-              <item name="ownershipDetails" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gabby-loans" type="b2602c69:ProjectViewProjectNode" />
@@ -428,12 +357,12 @@
       <workItem from="1538963360531" duration="9000" />
       <workItem from="1538967658911" duration="5097000" />
       <workItem from="1539124696777" duration="7037000" />
-      <workItem from="1539244332848" duration="3518000" />
+      <workItem from="1539244332848" duration="5720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52090000" />
+    <option name="totallyTimeSpent" value="54292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="722" extended-state="6" />
@@ -443,6 +372,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -456,7 +386,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -537,6 +466,7 @@
           <caret line="124" column="44" lean-forward="true" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#222#281#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -546,7 +476,7 @@
         <state relative-caret-position="-4">
           <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding>
-            <element signature="e#227#286#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -570,7 +500,7 @@
         <state relative-caret-position="600">
           <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding>
-            <element signature="e#227#286#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -591,6 +521,7 @@
           <caret line="139" column="10" lean-forward="true" selection-start-line="139" selection-start-column="10" selection-end-line="139" selection-end-column="10" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#222#281#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -671,7 +602,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#227#286#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -722,16 +653,6 @@
         <state relative-caret-position="240">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/employmentDetails/employmentFormItems/EmploymentStatus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,38 +719,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/personalDetails/PersonalDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#167#226#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/employmentDetails/EmploymentDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="115" column="124" lean-forward="true" selection-start-line="115" selection-start-column="15" selection-end-line="115" selection-end-column="124" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/loanlDetails/LoanDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="56" column="43" lean-forward="true" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -854,12 +744,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/loans/Loans.js">
+    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/ownershipDetails/OwnershipDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1636">
-          <caret line="168" column="0" lean-forward="true" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+        <state relative-caret-position="296">
+          <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
           <folding>
-            <element signature="e#227#286#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/expenseDetails/ExpenseDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="33" column="51" lean-forward="false" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/incomeDetails/IncomeDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -874,30 +784,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/ownershipDetails/OwnershipDetails.js">
+    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/personalDetails/PersonalDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+        <state relative-caret-position="371">
+          <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#167#226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/employmentDetails/employmentFormItems/EmploymentStatus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/loanlDetails/LoanDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="167" column="122" lean-forward="false" selection-start-line="167" selection-start-column="92" selection-end-line="167" selection-end-column="122" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#222#281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/employmentDetails/EmploymentDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/incomeDetails/IncomeDetails.js">
+    <entry file="file://$PROJECT_DIR$/src/loans/Loans.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/loans/loanItems/expenseDetails/ExpenseDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="33" column="51" lean-forward="false" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+        <state relative-caret-position="300">
+          <caret line="65" column="34" lean-forward="true" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

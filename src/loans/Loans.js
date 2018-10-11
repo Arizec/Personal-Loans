@@ -3,9 +3,6 @@ import '../css/App.css';
 import Header from "./Header";
 import { Form} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-
-// Demo styles, see 'Styles' section below for some notes on use.
-import 'react-accessible-accordion/dist/fancy-example.css';
 import LoanDetails from "./loanItems/loanlDetails/LoanDetails";
 import LoanSummary from "./loanSummary";
 import PersonalDetails from "./loanItems/personalDetails/PersonalDetails";
@@ -38,7 +35,7 @@ export default class Loans extends React.Component {
             protectingLoanSet: false,
             almostFinishedSet: false,
             loanDetailsProps: {
-                amount:"",
+                loanAmount: "",
                 loanType:"",
                 peopleNo: "",
                 existingCustomer: "",
@@ -51,7 +48,14 @@ export default class Loans extends React.Component {
             },
             personalDetailsProps: {
 
-            }
+            },
+            employmentDetailProps: {
+                employmentStatus: null,
+                employerName: "",
+                jobTitle: "",
+                startDate: ""
+
+            },
 
 
         }
@@ -64,7 +68,7 @@ export default class Loans extends React.Component {
         this.setState({
             personalDetailsSet: true
         });
-        this.state.loanDetailsProps = response;
+        this.state.personalDetailsProps = response;
     }
 
     // user has submitted information pertaining to PERSONAL DETAILS
@@ -72,6 +76,8 @@ export default class Loans extends React.Component {
         this.setState({
             employmentDetailsSet: true
         });
+
+        this.state.employmentDetailProps = response;
     }
 
     // user has submitted information pertaining to EMPLOYMENT
@@ -79,6 +85,8 @@ export default class Loans extends React.Component {
         this.setState({
             incomeDetailsSet: true
         });
+
+        this.state.employmentDetailProps = response;
     }
 
     // user has submitted information pertaining to INCOME
@@ -118,7 +126,6 @@ export default class Loans extends React.Component {
 
     // Display form
     render() {
-        var second = false;
         return (
             <div>
                 <Header/>
@@ -128,7 +135,8 @@ export default class Loans extends React.Component {
                         <Form>
                             <div className={"form-section"}>
                                 <h4> Your loan details </h4>
-                                <LoanDetails changeState={this.onChangeLoanDetails.bind(this)} loanDetails={this.state.loanDetailsProps}/>
+                                <LoanDetails changeState={this.onChangeLoanDetails.bind(this)}
+                                             loanDetails={this.state.loanDetailsProps}/>
                             </div>
 
                             <div className={"form-section"}>
@@ -140,7 +148,8 @@ export default class Loans extends React.Component {
                             <div className={"form-section"}>
                                 <h4> Tell us about your employment </h4>
                                 { this.state.employmentDetailsSet &&
-                                <EmploymentDetails changeState={this.onChangeEmploymentDetails.bind(this)}/>}
+                                <EmploymentDetails changeState={this.onChangeEmploymentDetails.bind(this)}
+                                                   employmentDetails={this.state.employmentDetailProps}/>}
                             </div>
 
                             <div className={"form-section"}>
