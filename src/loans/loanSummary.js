@@ -1,5 +1,7 @@
 import * as React from "react";
 const sumary_image = require('../assets/icon-personal-loan.svg');
+
+// Display Loan summary
 export default class LoanSummary extends React.Component {
 
 

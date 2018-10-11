@@ -10,20 +10,27 @@ import LoanDetails from "./loanItems/loanlDetails/LoanDetails";
 import LoanSummary from "./loanSummary";
 import PersonalDetails from "./loanItems/personalDetails/PersonalDetails";
 import EmploymentDetails from "./loanItems/employmentDetails/EmploymentDetails";
+import IncomeDetails from "./loanItems/incomeDetails/IncomeDetails";
+import OwnershipDetails from "./loanItems/ownershipDetails/OwnershipDetails";
+import LiabilityDetails from "./loanItems/liabilityDetails/LiabilityDetails";
 
 const background = require('../assets/beach.png');
 
-//Shows all admin users that can currently manage the event
-//Allows main admin to add other admin or invite attendee users
+//Loan form for users to fill out
+//Loan is divided into sections
 export default class Loans extends React.Component {
 
+    //stores user inputted information
     constructor(props){
         super(props);
+
         this.state={
             loanDetails:true,
             personalDetailsSet: false,
             employmentDetailsSet: false,
             incomeDetailsSet: false,
+            ownershipDetailsSet: false,
+            liabilityDetailsSet: false,
             loanDetailsProps: {
                 amount:"",
                 loanType:"",
@@ -45,21 +52,44 @@ export default class Loans extends React.Component {
 
     }
 
+    // user has submitted information pertaining to LOAN DETAILS
     onChangeLoanDetails(response){
+
         this.setState({
             personalDetailsSet: true
         });
         this.state.loanDetailsProps = response;
     }
 
+    // user has submitted information pertaining to PERSONAL DETAILS
     onChangePersonalDetails(response){
         this.setState({
             employmentDetailsSet: true
         });
     }
 
+    // user has submitted information pertaining to EMPLOYMENT
+    onChangeEmploymentDetails(response){
+        this.setState({
+            incomeDetailsSet: true
+        });
+    }
 
+    // user has submitted information pertaining to INCOME
+    onChangeIncomeDetails(response){
+        this.setState({
+            ownershipDetailsSet: true
+        });
+    }
 
+    // user has submitted information pertaining to OWNERSHIP DETAILS
+    onChangeOwnershipDetails(response){
+        this.setState({
+            liabilityDetailsSet: true
+        });
+    }
+
+    // Display form
     render() {
         var second = false;
         return (
@@ -83,25 +113,25 @@ export default class Loans extends React.Component {
                             <div className={"form-section"}>
                                 <h4> Tell us about your employment </h4>
                                 { this.state.employmentDetailsSet &&
-                                <EmploymentDetails/>}
+                                <EmploymentDetails changeState={this.onChangeEmploymentDetails.bind(this)}/>}
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Tell us about what you earn </h4>
-                                { second &&
-                                <LoanDetails/>}
+                                { this.state.incomeDetailsSet &&
+                                <IncomeDetails changeState={this.onChangeIncomeDetails.bind(this)}/>}
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Tell us about what you own </h4>
-                                { second &&
-                                <LoanDetails/>}
+                                { this.state.ownershipDetailsSet &&
+                                <OwnershipDetails changeState={this.onChangeOwnershipDetails.bind(this)}/>}
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Tell us about what you owe </h4>
-                                { second &&
-                                <LoanDetails/>}
+                                { this.state.liabilityDetailsSet &&
+                                <LiabilityDetails/>}
                             </div>
 
                             <div className={"form-section"}>
@@ -123,6 +153,7 @@ export default class Loans extends React.Component {
                             </div>
                         </Form>
                     </span>
+
                     <span className="right">
                         <LoanSummary
                             numberOfPeople={this.state.numberOfPeople}
@@ -134,10 +165,6 @@ export default class Loans extends React.Component {
                 </div>
 
 
-                    {/*<div className="container">*/}
-                        {/*<img className={"homepage-background"} src={background} alt="" />*/}
-                            {/*<div className="centered">hi</div>*/}
-                    {/*</div>*/}
             </div>
 
         );

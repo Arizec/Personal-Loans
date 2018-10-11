@@ -3,7 +3,7 @@ import '../../../css/App.css';
 import { Label, FormGroup, Button, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-export default class IncomeDetails extends React.Component {
+export default class OwnershipDetails extends React.Component {
 
     constructor (props) {
         super(props);

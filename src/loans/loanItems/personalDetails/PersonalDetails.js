@@ -23,7 +23,6 @@ export default class PersonalDetails extends React.Component {
 
         };
 
-
         this.handleClick=this.handleClick.bind(this)
 
     }

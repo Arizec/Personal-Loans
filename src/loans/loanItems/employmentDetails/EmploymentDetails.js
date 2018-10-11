@@ -26,6 +26,7 @@ export default class EmploymentDetails extends React.Component {
 
     onChangeStateChild(){
         this.handleClick();
+        this.props.changeState(this.state);
     }
 
 

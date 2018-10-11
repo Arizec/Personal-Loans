@@ -2,13 +2,11 @@ import React from 'react';
 import '../../../css/App.css';
 import { FormGroup, Button, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-// Demo styles, see 'Styles' section below for some notes on use.
-import 'react-accessible-accordion/dist/fancy-example.css';
 import LoanPurposeOptions from "./loanFormItems/LoanPurposeOptions";
 import RepaymentFrequencyOptions from "./loanFormItems/RepaymentFrequencyOptions";
 import LoanTermOptions from "./loanFormItems/LoanTermOptions";
 
-//Header for application
+// Stores information relating to loan details section
 export default class LoanDetails extends React.Component {
 
     constructor (props) {
@@ -32,30 +30,34 @@ export default class LoanDetails extends React.Component {
 
     }
 
+    // save loan term option user selected from the dropdown
     saveLoanTerm(type){
         this.setState({
             loanTerm: type
         });
     }
 
+    //save loan purpose option user selected from the dropdown
     saveLoanPurpose(type){
         this.setState({
             loanPurpose: type
         });
     }
 
+    //save repayment frequency option user selected from the dropdown
     saveRepaymentFrequency(type){
         this.setState({
             repaymentFrequency: type
         });
     }
 
+    // when user clicks 'next' button, save information in the state
     onChangeStateChild(){
         this.handleClick();
         this.props.changeState(this.state);
     }
 
-
+   // close section
     handleClick(e)
     {
         this.setState({show:!this.state.show})
