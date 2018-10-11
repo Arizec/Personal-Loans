@@ -47,6 +47,9 @@ export default class Loans extends React.Component {
                 repaymentFrequency: null
             },
             personalDetailsProps: {
+                firstName: "",
+                middleName: "",
+                lastName: ""
 
             },
             employmentDetailProps: {
@@ -68,7 +71,7 @@ export default class Loans extends React.Component {
         this.setState({
             personalDetailsSet: true
         });
-        this.state.personalDetailsProps = response;
+        this.state.loanDetailsProps = response;
     }
 
     // user has submitted information pertaining to PERSONAL DETAILS
@@ -77,7 +80,7 @@ export default class Loans extends React.Component {
             employmentDetailsSet: true
         });
 
-        this.state.employmentDetailProps = response;
+        this.state.personalDetailsProps = response;
     }
 
     // user has submitted information pertaining to EMPLOYMENT
@@ -142,7 +145,8 @@ export default class Loans extends React.Component {
                             <div className={"form-section"}>
                                 <h4> Tell us about yourself </h4>
                                 { this.state.personalDetailsSet &&
-                                <PersonalDetails changeState={this.onChangePersonalDetails.bind(this)} />}
+                                <PersonalDetails changeState={this.onChangePersonalDetails.bind(this)}
+                                                 personalDetails={this.state.personalDetailsProps}/>}
                             </div>
 
                             <div className={"form-section"}>

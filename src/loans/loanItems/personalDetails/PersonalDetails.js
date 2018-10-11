@@ -20,6 +20,9 @@ export default class PersonalDetails extends React.Component {
         this.state = {
             show: true,
             ausResidentSet: "",
+            firstName: this.props.personalDetails.firstName,
+            middleName:this.props.personalDetails.middleName,
+            lastName: this.props.personalDetails.lastName
 
         };
 
@@ -51,17 +54,20 @@ export default class PersonalDetails extends React.Component {
 
                 <div className={"form-item-padding"}>
                     First name
-                    <Input type="text" name="firstName" id="firstName" />
+                    <Input type="text" name="firstName" id="firstName" value={this.state.firstName}
+                           onChange={(event)=>{this.setState({firstName: event.target.value})}}/>
                 </div>
 
                 <div className={"form-item-padding"}>
                     Middle name (Optional)
-                    <Input type="text" name="middleName" id="middleName" />
+                    <Input type="text" name="middleName" id="middleName" value={this.state.middleName}
+                           onChange={(event)=>{this.setState({middleName: event.target.value})}}/>
                 </div>
 
                 <div className={"form-item-padding"}>
                     Last name
-                    <Input type="text" name="lastName" id="lastName" />
+                    <Input type="text" name="lastName" id="lastName" value={this.state.lastName}
+                           onChange={(event)=>{this.setState({lastName: event.target.value})}}/>
                 </div>
 
                 <div className={"form-item-padding"}>

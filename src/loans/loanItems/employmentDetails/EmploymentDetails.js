@@ -44,18 +44,21 @@ export default class EmploymentDetails extends React.Component {
             <div>
                 <div className={"form-item-padding"}>
                     Employer's name
-                    <Input type="text" name="employerName" id="employerName" value={this.state.employerName} onChange={(event)=>{this.setState({employerName: event.target.value})}}/>
+                    <Input type="text" name="employerName" id="employerName" value={this.state.employerName}
+                           onChange={(event)=>{this.setState({employerName: event.target.value})}}/>
                 </div>
 
                 <div className={"form-item-padding"}>
                     What's your job title?
-                    <Input type="text" name="jobTitle" id="jobTitle" value={this.state.jobTitle} onChange={(event)=>{this.setState({jobTitle: event.target.value})}}/>
+                    <Input type="text" name="jobTitle" id="jobTitle" value={this.state.jobTitle}
+                           onChange={(event)=>{this.setState({jobTitle: event.target.value})}}/>
                 </div>
 
                 <div className={"form-item-padding"}>
                     <FormGroup>
                         <Label for="exampleDate">When did you start working here?</Label>
-                        <Input type="date" name="date" id="exampleDate" placeholder="date placeholder" value={this.state.startDate} onChange={(event)=>{this.setState({startDate: event.target.value})}}/>
+                        <Input type="date" name="date" id="exampleDate" placeholder="date placeholder" value={this.state.startDate}
+                               onChange={(event)=>{this.setState({startDate: event.target.value})}}/>
                     </FormGroup>
                 </div>
 
