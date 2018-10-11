@@ -41,7 +41,7 @@ export default class EmploymentStatus extends React.Component {
         const { selectedOption } = this.state;
         return (
             <div className={"form-item-padding"}>
-                Marital status
+                What is your employment status?
                 <Select
                     value={selectedOption}
                     onChange={this.handleChange}

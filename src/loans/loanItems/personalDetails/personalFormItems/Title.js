@@ -14,6 +14,7 @@ const title = [
 
 //Header for application
 export default class Title extends React.Component {
+
     state = {
         selectedOption: null,
     };

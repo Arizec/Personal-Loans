@@ -19,7 +19,8 @@ export default class PersonalDetails extends React.Component {
 
         this.state = {
             show: true,
-            ausResidentSet: ""
+            ausResidentSet: "",
+
         };
 
 
@@ -95,8 +96,8 @@ export default class PersonalDetails extends React.Component {
                     this.state.ausResidentSet === "YES" &&
                         <IsAusResident/>
                 }
-                <Button onClick={this.onChangeStateChild.bind(this)}>Previous</Button>
-                <Button color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
+                <Button className={"previous-button"} onClick={this.onChangeStateChild.bind(this)}>Previous</Button>
+                <Button className={"next-button"} color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
         )
     }

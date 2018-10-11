@@ -111,6 +111,9 @@ export default class EmploymentDetails extends React.Component {
                     || optionChosen === 'unemployed') &&
                 this.otherReasons()}
 
+                <Button className={"previous-button"} onClick={this.onChangeStateChild.bind(this)}>Previous</Button>
+                <Button className={"next-button"} color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
+
             </div>
 
         );

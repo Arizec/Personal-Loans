@@ -23,6 +23,7 @@ export default class Loans extends React.Component {
             loanDetails:true,
             personalDetailsSet: false,
             employmentDetailsSet: false,
+            incomeDetailsSet: false,
             loanDetailsProps: {
                 amount:"",
                 loanType:"",
@@ -34,6 +35,9 @@ export default class Loans extends React.Component {
                 loanPurpose: null,
                 loanTerm: null,
                 repaymentFrequency: null
+            },
+            personalDetailsProps: {
+
             }
 
 
@@ -63,11 +67,11 @@ export default class Loans extends React.Component {
                 <Header/>
                 <img className={"homepage-background"} src={background} alt="" />
                 <div className={"contain"}>
-                    <span className="left">
+                    <span className="loans-container">
                         <Form>
                             <div className={"form-section"}>
                                 <h4> Your loan details </h4>
-                                    <LoanDetails changeState={this.onChangeLoanDetails.bind(this)} loanDetails={this.state.loanDetailsProps}/>
+                                <LoanDetails changeState={this.onChangeLoanDetails.bind(this)} loanDetails={this.state.loanDetailsProps}/>
                             </div>
 
                             <div className={"form-section"}>
@@ -77,13 +81,37 @@ export default class Loans extends React.Component {
                             </div>
 
                             <div className={"form-section"}>
-                                <h4> Your employment details </h4>
+                                <h4> Tell us about your employment </h4>
                                 { this.state.employmentDetailsSet &&
                                 <EmploymentDetails/>}
                             </div>
 
                             <div className={"form-section"}>
                                 <h4> Tell us about what you earn </h4>
+                                { second &&
+                                <LoanDetails/>}
+                            </div>
+
+                            <div className={"form-section"}>
+                                <h4> Tell us about what you own </h4>
+                                { second &&
+                                <LoanDetails/>}
+                            </div>
+
+                            <div className={"form-section"}>
+                                <h4> Tell us about what you owe </h4>
+                                { second &&
+                                <LoanDetails/>}
+                            </div>
+
+                            <div className={"form-section"}>
+                                <h4> Your expenses </h4>
+                                { second &&
+                                <LoanDetails/>}
+                            </div>
+
+                            <div className={"form-section"}>
+                                <h4> Protecting your loan </h4>
                                 { second &&
                                 <LoanDetails/>}
                             </div>

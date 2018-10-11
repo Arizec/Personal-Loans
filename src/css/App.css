@@ -127,8 +127,9 @@ a:-webkit-any-link {
     color: black;
 }
 
-.left {
+.loans-container {
     margin-top: 100px;
+    margin-bottom: 100px;
     font-size: 0.875em;
     line-height: 18px;
     position: absolute;
@@ -199,7 +200,6 @@ a:-webkit-any-link {
 
 .radio-button input[type="radio"] {
     opacity:0.01;
-    z-index:5;
 }
 
 
@@ -207,7 +207,6 @@ a:-webkit-any-link {
     padding:5px;
     border:1px solid #CCC;
     cursor:pointer;
-    z-index:4;
 }
 
 .radio-button label:hover {
@@ -248,8 +247,9 @@ a:-webkit-any-link {
 
 button.editItem, button.editItem:hover{
     background:white!important;
-    color:black!important;
+    color:#1a3f7a !important;
     padding:0!important;
+    text-decoration: underline;
     font: inherit;
     cursor: pointer;
     border-color:#ffffff;
@@ -262,4 +262,12 @@ button.editItem, button.editItem:hover{
 .max-width{
     width: 100% ! important;
     height: 100% ! important;
+}
+
+.previous-button{
+    margin: 0.5em;
+}
+
+.next-button{
+    margin: 0.5em;
 }
