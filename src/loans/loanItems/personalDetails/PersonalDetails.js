@@ -5,9 +5,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { Button, Label, FormGroup, Input } from 'reactstrap';
 import Title from "./personalFormItems/Title";
+import CountriesSelect from "react-form-countries-select";
 import MaritalStatus from "./personalFormItems/MaritalStatus";
 import FinancialDependants from "./personalFormItems/FinancialDependants";
-import TaxPurposes from "./personalFormItems/TaxPurposes";
+import TinReason from "./personalFormItems/TinReason";
 import IsAusResident from "./personalFormItems/IsAusResident";
 
 
@@ -19,14 +20,16 @@ export default class PersonalDetails extends React.Component {
 
         this.state = {
             show: true,
-            ausResident: "",
             title: this.props.personalDetails.title,
             firstName: this.props.personalDetails.firstName,
             middleName:this.props.personalDetails.middleName,
             lastName: this.props.personalDetails.lastName,
             maritalStatus: this.props.personalDetails.maritalStatus,
             dependents: this.props.personalDetails.dependents,
-            driversLicence: this.props.personalDetails.driversLicence
+            driversLicence: this.props.personalDetails.driversLicence,
+            ausResident: this.props.personalDetails.ausResident,
+            usResident: this.props.personalDetails.usResident,
+            otherCountryResident: this.props.personalDetails.otherCountryResident
 
         };
 
@@ -34,9 +37,6 @@ export default class PersonalDetails extends React.Component {
 
     }
 
-    isAusResident(isTrue){
-        this.setState({ausResident: isTrue});
-    }
 
     saveTitleStatus(type){
         this.setState({title: type});
@@ -95,6 +95,105 @@ export default class PersonalDetails extends React.Component {
         );
     }
 
+    onCountrySelect = (event, country) => {
+        // event {SyntheticEvent<HTMLSelectElement>} - React HTML event
+        // country {Object} - Object representing the state
+        // country.name {string} - The full name of the selected country
+        // country.abbreviation {string} - The two character country code
+    }
+
+    getTaxInfo() {
+
+        return (
+            <div>
+                <div className={"form-item-padding"} onChange={(event)=>{this.setState({ausResident: event.target.value})}}>
+                    Are you an Australian resident for tax purposes?
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li >
+                                <input type="radio" id="aus-resident-yes" name="ausResident" value="YES" checked={this.state.ausResident==="YES"}/>
+                                <label htmlFor="aus-resident-yes">Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="aus-resident-no" name="ausResident" value="NO" checked={this.state.ausResident==="NO"} />
+                                <label htmlFor="aus-resident-no">No</label>
+                            </li>
+                        </ul><br/><br/>
+                    </FormGroup>
+
+                </div>
+                {
+                    this.state.ausResident === "NO" &&
+                    <div className={"red-font"}>
+                        ! You must be living in Australia to apply for a NAB personal loan.
+                    </div>
+                }
+                <div className={"form-item-padding"} onChange={(event)=>{this.setState({usResident: event.target.value})}}>
+                    Are you a US citizen or US resident for tax purposes?
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li >
+                                <input type="radio" id="us-resident-yes" name="usResident" value="YES" checked={this.state.usResident==="YES"}/>
+                                <label htmlFor="us-resident-yes">Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="us-resident-no" name="usResident" value="NO" checked={this.state.usResident==="NO"} />
+                                <label htmlFor="us-resident-no">No</label>
+                            </li>
+                        </ul><br/><br/>
+                    </FormGroup>
+
+                </div>
+
+                {
+                    this.state.usResident === "YES" &&
+                    <div className={"form-item-padding"}>
+                        What is your US Taxpayer Identification Number (TIN)
+                        <Input type="text" name="usTIN" id="usTIN" />
+                    </div>
+                }
+
+                <div className={"form-item-padding"} onChange={(event)=>{this.setState({otherCountryResident: event.target.value})}}>
+                    Are you a resident of any other country for tax purposes?
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li >
+                                <input type="radio" id="other-country-resident-yes" name="otherCountryResident" value="YES" checked={this.state.otherCountryResident==="YES"}/>
+                                <label htmlFor="other-country-resident-yes">Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="other-country-resident-no" name="otherCountryResident" value="NO" checked={this.state.otherCountryResident==="NO"} />
+                                <label htmlFor="other-country-resident-no">No</label>
+                            </li>
+                        </ul><br/><br/>
+                    </FormGroup>
+
+                </div>
+                {
+                    this.state.otherCountryResident === "YES" &&
+                    <div>
+                        <div className={"form-item-padding"}>
+                            <CountriesSelect className={"max-width"} onChange={this.onCountrySelect} />
+                        </div>
+
+
+                        <div className={"form-item-padding"}>
+                            What is your US Taxpayer Identification Number (TIN)
+                            <Input type="text" name="usTIN" id="usTIN" />
+                        </div>
+                    </div>
+
+                }
+
+                {this.state.otherCountryResident === "NO" &&
+                    <TinReason/>
+
+                }
+            </div>
+
+        );
+    }
+
     showDetails() {
         return(
             <div>
@@ -116,7 +215,10 @@ export default class PersonalDetails extends React.Component {
                     <Input type="text" name="licenceNo" id="licenceNo" value={this.state.driversLicence}
                            onChange={(event)=>{this.setState({driversLicence: event.target.value})}}/>
                 </div>
-                <TaxPurposes isAusResident={this.isAusResident.bind(this)}/>
+
+                {this.getTaxInfo()}
+
+                {/*<TaxPurposes isAusResident={this.isAusResident.bind(this)}/>*/}
                 {
                     this.state.ausResident === "YES" &&
                         <IsAusResident/>

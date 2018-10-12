@@ -54,7 +54,9 @@ export default class Loans extends React.Component {
                 maritalStatus: "",
                 dependents: "",
                 driversLicence: "",
-                ausResident: ""
+                ausResident: "",
+                usResident: "",
+                otherCountryResident: ""
 
             },
             employmentDetailProps: {
