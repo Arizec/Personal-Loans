@@ -14,13 +14,21 @@ const title = [
 
 //Header for application
 export default class Title extends React.Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            selectedOption: this.props.title,
+        };
+        this.saveTitleStatus=this.saveTitleStatus.bind(this)
+    }
 
-    state = {
-        selectedOption: null,
-    };
+    saveTitleStatus(selectedOption){
+        this.props.saveTitleStatus(selectedOption);
+    }
 
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
+        this.saveTitleStatus(selectedOption);
     };
 
 

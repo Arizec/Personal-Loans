@@ -20,12 +20,21 @@ const financialDependants = [
 
 //Header for application
 export default class FinancialDependants extends React.Component {
-    state = {
-        selectedOption: null,
-    };
+    constructor (props) {
+        super(props);
+        this.state = {
+            selectedOption: this.props.dependents,
+        };
+        this.saveDependentsStatus=this.saveDependentsStatus.bind(this)
+    }
+
+    saveDependentsStatus(selectedOption){
+        this.props.saveDependentsStatus(selectedOption);
+    }
 
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
+        this.saveDependentsStatus(selectedOption);
     };
 
 

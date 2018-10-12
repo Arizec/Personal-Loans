@@ -16,12 +16,21 @@ const maritalStatus = [
 
 //Header for application
 export default class MaritalStatus extends React.Component {
-    state = {
-        selectedOption: null,
-    };
+    constructor (props) {
+        super(props);
+        this.state = {
+            selectedOption: this.props.maritalStatus,
+        };
+        this.saveMaritalStatus=this.saveMaritalStatus.bind(this)
+    }
+
+    saveMaritalStatus(selectedOption){
+        this.props.saveMaritalStatus(selectedOption);
+    }
 
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
+        this.saveMaritalStatus(selectedOption);
     };
 
 

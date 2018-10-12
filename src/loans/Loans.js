@@ -47,9 +47,14 @@ export default class Loans extends React.Component {
                 repaymentFrequency: null
             },
             personalDetailsProps: {
+                title: "",
                 firstName: "",
                 middleName: "",
-                lastName: ""
+                lastName: "",
+                maritalStatus: "",
+                dependents: "",
+                driversLicence: "",
+                ausResident: ""
 
             },
             employmentDetailProps: {

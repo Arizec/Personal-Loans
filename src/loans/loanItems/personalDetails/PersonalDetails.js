@@ -19,10 +19,14 @@ export default class PersonalDetails extends React.Component {
 
         this.state = {
             show: true,
-            ausResidentSet: "",
+            ausResident: "",
+            title: this.props.personalDetails.title,
             firstName: this.props.personalDetails.firstName,
             middleName:this.props.personalDetails.middleName,
-            lastName: this.props.personalDetails.lastName
+            lastName: this.props.personalDetails.lastName,
+            maritalStatus: this.props.personalDetails.maritalStatus,
+            dependents: this.props.personalDetails.dependents,
+            driversLicence: this.props.personalDetails.driversLicence
 
         };
 
@@ -31,9 +35,19 @@ export default class PersonalDetails extends React.Component {
     }
 
     isAusResident(isTrue){
-        this.setState({
-            ausResidentSet: isTrue
-        });
+        this.setState({ausResident: isTrue});
+    }
+
+    saveTitleStatus(type){
+        this.setState({title: type});
+    }
+
+    saveMaritalStatus(type){
+        this.setState({maritalStatus: type});
+    }
+
+    saveDependentsStatus(type){
+        this.setState({dependents: type});
     }
 
     onChangeStateChild(){
@@ -87,18 +101,24 @@ export default class PersonalDetails extends React.Component {
 
                 <h5> Personal details</h5>
 
-                <Title/>
+                <Title saveTitleStatus={this.saveTitleStatus.bind(this)}
+                       title={this.state.title}/>
                 {this.nameAndDOB()}
-                <MaritalStatus/>
-                <FinancialDependants/>
+
+                <MaritalStatus saveMaritalStatus={this.saveMaritalStatus.bind(this)}
+                               maritalStatus={this.state.maritalStatus}/>
+
+                <FinancialDependants saveDependentsStatus={this.saveDependentsStatus.bind(this)}
+                                     dependents={this.state.dependents}/>
 
                 <div className={"form-item-padding"}>
                     Driver's licence number (Optional)
-                    <Input type="text" name="licenceNo" id="licenceNo" />
+                    <Input type="text" name="licenceNo" id="licenceNo" value={this.state.driversLicence}
+                           onChange={(event)=>{this.setState({driversLicence: event.target.value})}}/>
                 </div>
                 <TaxPurposes isAusResident={this.isAusResident.bind(this)}/>
                 {
-                    this.state.ausResidentSet === "YES" &&
+                    this.state.ausResident === "YES" &&
                         <IsAusResident/>
                 }
                 <Button className={"previous-button"} onClick={this.onChangeStateChild.bind(this)}>Previous</Button>
