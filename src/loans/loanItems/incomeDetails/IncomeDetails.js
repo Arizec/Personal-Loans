@@ -28,10 +28,64 @@ export default class IncomeDetails extends React.Component {
         this.setState({show:!this.state.show})
     }
 
+    incomeTypes(){
+        return(
+            <div>
+                Please enter your current fornightly income (net).
+
+                <div className={"form-item-padding"}>
+                    Salary <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Family allowance <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Pensions <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Rental income <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Self-employed income <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Superannuation income <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Dividend income <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Overtime <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Commission <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Child support <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    Bonus <Input type="text" name="firstName" id="firstName" value='0'/>
+                </div>
+            </div>
+        )
+    }
+
     showDetails(){
         return (
             <div>
-                <h6>-- INPUT INFO HERE ---</h6>
+
+                {this.incomeTypes()}
+
                 <Button className={"next-button"} color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
 
