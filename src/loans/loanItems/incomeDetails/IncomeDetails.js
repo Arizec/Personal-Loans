@@ -10,7 +10,10 @@ export default class IncomeDetails extends React.Component {
 
         this.state = {
             show: true,
-            employmentStatus: null
+            employmentStatus: null,
+            changesToEmployment: "",
+            paymentDifficulty: "",
+            legalIssues: ""
         };
 
         this.handleClick=this.handleClick.bind(this)
@@ -26,6 +29,69 @@ export default class IncomeDetails extends React.Component {
     handleClick(e)
     {
         this.setState({show:!this.state.show})
+    }
+
+    paymentDifficulties(){
+        return(
+            <div>
+
+                <div className={"form-item-padding"} onChange={(event)=>{this.setState({changesToEmployment: event.target.value})}}>
+                    Do you foresee any major changes to your employment, income and/or expenses over the next 12 months
+                    that will make it difficult for you to meet your financial commitments?
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li >
+                                <input type="radio" id="aus-resident-yes" name="ausResident" value="YES" checked={this.state.changesToEmployment==="YES"}/>
+                                <label htmlFor="aus-resident-yes">Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="aus-resident-no" name="ausResident" value="NO" checked={this.state.changesToEmployment==="NO"} />
+                                <label htmlFor="aus-resident-no">No</label>
+                            </li>
+                        </ul><br/><br/>
+                    </FormGroup>
+
+                </div>
+
+
+                <div className={"form-item-padding"} onChange={(event)=>{this.setState({paymentDifficulty: event.target.value})}}>
+                    Have you had any difficulties in making your loan repayments in the last 2 years?
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li >
+                                <input type="radio" id="payment-yes" name="paymentDifficulty" value="YES" checked={this.state.paymentDifficulty==="YES"}/>
+                                <label htmlFor="payment-yes">Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="payment-no" name="paymentDifficulty" value="NO" checked={this.state.paymentDifficulty==="NO"} />
+                                <label htmlFor="payment-no">No</label>
+                            </li>
+                        </ul><br/><br/>
+                    </FormGroup>
+
+                </div>
+
+
+                <div className={"form-item-padding"} onChange={(event)=>{this.setState({legalIssues: event.target.value})}}>
+                    Have you ever had, or are there any judgements, attachments or legal proceedings against you relating
+                    to financial matters?
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li >
+                                <input type="radio" id="legal-yes" name="legalIssues" value="YES" checked={this.state.legalIssues==="YES"}/>
+                                <label htmlFor="legal-yes">Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="legal-no" name="legalIssues" value="NO" checked={this.state.legalIssues==="NO"} />
+                                <label htmlFor="legal-no">No</label>
+                            </li>
+                        </ul><br/><br/>
+                    </FormGroup>
+
+                </div>
+
+            </div>
+        )
     }
 
     incomeTypes(){
@@ -85,6 +151,7 @@ export default class IncomeDetails extends React.Component {
             <div>
 
                 {this.incomeTypes()}
+                {this.paymentDifficulties()}
 
                 <Button className={"next-button"} color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
