@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../css/App.css';
-import { Label, FormGroup, Button, Input } from 'reactstrap';
+import { Button, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class ExpenseDetails extends React.Component {
@@ -10,7 +10,8 @@ export default class ExpenseDetails extends React.Component {
 
         this.state = {
             show: true,
-            employmentStatus: null
+            rent: "",
+            otherExpenses: ""
         };
 
         this.handleClick=this.handleClick.bind(this)
@@ -31,7 +32,19 @@ export default class ExpenseDetails extends React.Component {
     showDetails(){
         return (
             <div>
-                <h6>-- INPUT INFO @ /expenseDetails ---</h6>
+                <div className={"form-item-padding"}>
+                    How much rent do you pay per month?
+                    <Input type="text" name="rent" id="rent" value={this.state.rent}
+                           onChange={(event)=>{this.setState({rent: event.target.value})}}/>
+                </div>
+
+                <div className={"form-item-padding"}>
+                    What are your other general living expenses per month?
+                    <Input type="text" name="rent" id="rent" value={this.state.otherExpenses}
+                           onChange={(event)=>{this.setState({otherExpenses: event.target.value})}}/>
+                </div>
+
+
                 <Button className={"next-button"} color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
 

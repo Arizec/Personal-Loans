@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../css/App.css';
-import { Label, FormGroup, Button, Input } from 'reactstrap';
+import { FormGroup, Button, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class IncomeDetails extends React.Component {

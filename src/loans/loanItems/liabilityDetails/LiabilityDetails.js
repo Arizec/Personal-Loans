@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../css/App.css';
-import { Label, FormGroup, Button, Input } from 'reactstrap';
+import {FormGroup, Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class LiabilityDetails extends React.Component {
@@ -10,7 +10,7 @@ export default class LiabilityDetails extends React.Component {
 
         this.state = {
             show: true,
-            employmentStatus: null
+            hasLiabilities: ""
         };
 
         this.handleClick=this.handleClick.bind(this)
@@ -31,7 +31,25 @@ export default class LiabilityDetails extends React.Component {
     showDetails(){
         return (
             <div>
-                <h6>-- INPUT INFO @ /liabilityDetails ---</h6>
+                <div className={"form-item-padding"} onChange={(event)=>{this.setState({hasLiabilities: event.target.value})}}>
+                    We only need details of things that aren't with us i.e. we don't need details about bank accounts with
+                    us.
+
+                    Do you have any assets?
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li >
+                                <input type="radio" id="liabilities-yes" name="hasLiabilities" value="YES" checked={this.state.hasLiabilities==="YES"}/>
+                                <label htmlFor="liabilities-yes">Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="liabilities-no" name="hasLiabilities" value="NO" checked={this.state.hasLiabilities==="NO"} />
+                                <label htmlFor="liabilities-no">No</label>
+                            </li>
+                        </ul><br/><br/>
+                    </FormGroup>
+
+                </div>
                 <Button className={"next-button"} color="#c20000" onClick={this.onChangeStateChild.bind(this)}>Next</Button>
             </div>
 

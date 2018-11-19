@@ -76,27 +76,27 @@ export default class Loans extends React.Component {
     onChangeLoanDetails(response){
 
         this.setState({
-            personalDetailsSet: true
+            personalDetailsSet: true,
+            loanDetailsProps: response
         });
-        this.state.loanDetailsProps = response;
     }
 
     // user has submitted information pertaining to PERSONAL DETAILS
     onChangePersonalDetails(response){
         this.setState({
-            employmentDetailsSet: true
+            employmentDetailsSet: true,
+            personalDetailsProps: response
         });
 
-        this.state.personalDetailsProps = response;
     }
 
     // user has submitted information pertaining to EMPLOYMENT
     onChangeEmploymentDetails(response){
         this.setState({
-            incomeDetailsSet: true
+            incomeDetailsSet: true,
+            employmentDetailProps: response
         });
 
-        this.state.employmentDetailProps = response;
     }
 
     // user has submitted information pertaining to INCOME

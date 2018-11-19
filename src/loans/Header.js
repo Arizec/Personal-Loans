@@ -17,8 +17,8 @@ export default class Header extends React.Component {
                     <p >NAB Personal Loan</p>
                 </span>
                 <span className="topnav-right">
-                    <a href="#">
-                        <img className="lock-icon" src={iconlock}/>
+                    <a href="/">
+                        <img className="lock-icon" src={iconlock} alt="Lock icon"/>
                     </a>
                     <p>
                         Secured by NAB
