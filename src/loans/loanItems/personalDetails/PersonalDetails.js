@@ -18,18 +18,44 @@ export default class PersonalDetails extends React.Component {
     constructor (props) {
         super(props);
 
+        let details = this.props.personalDetails;
+
         this.state = {
             show: true,
-            title: this.props.personalDetails.title,
-            firstName: this.props.personalDetails.firstName,
-            middleName:this.props.personalDetails.middleName,
-            lastName: this.props.personalDetails.lastName,
-            maritalStatus: this.props.personalDetails.maritalStatus,
-            dependents: this.props.personalDetails.dependents,
-            driversLicence: this.props.personalDetails.driversLicence,
-            ausResident: this.props.personalDetails.ausResident,
-            usResident: this.props.personalDetails.usResident,
-            otherCountryResident: this.props.personalDetails.otherCountryResident
+
+            personalInfo: {
+                title: details.title,
+                gender: details.gender,
+                firstName: details.firstName,
+                middleName:details.middleName,
+                lastName: details.lastName,
+                maritalStatus: details.maritalStatus,
+                dependents: details.dependents,
+                driversLicence: details.driversLicence,
+                ausResident: details.ausResident,
+                usResident: details.usResident,
+                otherCountryResident: details.otherCountryResident
+            },
+            currentAddress: {
+                type: details.type,
+                postalAddress: {
+                    unit: details.unit,
+                    number: details.number,
+                    street: details.street,
+                    suffix: details.suffix,
+                    state: details.state,
+                    country: details.country,
+                    postalCode: details.postalCode,
+                },
+                accommodationType: details.accommodationType,
+                stayingSince: details.stayingSince
+            },
+            contacts: {
+                personalMobile: details.personalMobile,
+                personalEmail: details.personalEmail,
+                homePhone: details.homePhone
+            }
+
 
         };
 
@@ -199,6 +225,23 @@ export default class PersonalDetails extends React.Component {
             <div>
 
                 <h5> Personal details</h5>
+
+                <div className={"form-item-padding"} onChange={(event)=>{this.setState({gender: event.target.value})}}>
+                    Please select your gender:
+                    <FormGroup>
+                        <ul className="radio-button">
+                            <li >
+                                <input type="radio" id="male" name="gender" value="MALE" checked={this.state.gender==="MALE"}/>
+                                <label htmlFor="male">Male</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="female" name="gender" value="FEMALE" checked={this.state.gender==="FEMALE"} />
+                                <label htmlFor="female">Female</label>
+                            </li>
+                        </ul><br/><br/>
+                    </FormGroup>
+
+                </div>
 
                 <Title saveTitleStatus={this.saveTitleStatus.bind(this)}
                        title={this.state.title}/>

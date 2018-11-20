@@ -16,6 +16,8 @@ export default class LoanDetails extends React.Component {
 
         this.state = {
             show: true,
+            offerId: this.props.loanDetails.offerId,
+            serviceCode: this.props.loanDetails.serviceCode,
             amount: this.props.loanDetails.loanAmount,
             loanType:this.props.loanDetails.loanType,
             peopleNo: this.props.loanDetails.peopleNo,
