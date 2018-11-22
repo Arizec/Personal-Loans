@@ -60,12 +60,31 @@ export default class Loans extends React.Component {
                     middleName: "",
                     lastName: "",
                     maritalStatus: "",
+                    birthDate: "",
                     dependents: "",
                     driversLicence: "",
                     ausResident: "",
                     usResident: "",
                     otherCountryResident: ""
                 },
+                applicantRelationshipType: "APPLICANT",
+                partyType: "INDIVIDUAL",
+                isExistingParty: false,
+                eKYCConsent: true,
+                TFN: "111119",
+                identificationDetails: [
+                    {
+                        type: "PAS",
+                        id: "J123",
+                        issuingAuthority: "",
+                        countryOfIssue: "AU",
+                        placeOfIssue: "",
+                        status: "",
+                        expiryDate: "2028-02-01",
+                        identificationId: ""
+                    }
+
+                ],
                 currentAddress: {
                     type: "RES",
                     postalAddress: {
@@ -84,14 +103,44 @@ export default class Loans extends React.Component {
                     personalMobile: "",
                     personalEmail: "",
                     homePhone: ""
+                },
+                securityQuestions: [{
+                    questionId: "24",
+                    question: "",
+                    answer: "0"
+
+                }],
+                consent: [{
+                    consentType: "ONLINE",
+                    isConsentAvailable: true,
+                    consentLevelType: "APPLICANT"
+                }],
+                isApplicantNotPresent: false,
+                occupationCode: "O223115",
+                industry: "30",
+                fatcaDetails: {
+                    USResident: false,
+                    idType: "TIN",
+                    idNumber: ""
                 }
 
             },
             employments: {
-                employmentStatus: null,
-                employerName: "",
-                jobTitle: "",
-                startDate: ""
+                partyDetailsConsent: true,
+                profiles: 0,
+                employmentProfiles: [{
+                    id: "1",
+                    type: "",
+                    status: null,
+                    industry: "",
+                    occupation: "",
+                    employerName: "",
+                    startDate: "",
+                    endDate: "",
+                    isPrimary: "",
+                    profileStatus: ""
+                }]
+
 
             },
 
@@ -102,8 +151,8 @@ export default class Loans extends React.Component {
 
     // user has submitted information pertaining to LOAN DETAILS
     onChangeLoanDetails(response){
-
         this.state.isSet.personalDetailsSet = true;
+        this.props.history.push('/submission');
 
         this.setState({
             submission: response

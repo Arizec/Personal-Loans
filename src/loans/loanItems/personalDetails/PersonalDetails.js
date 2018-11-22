@@ -30,12 +30,31 @@ export default class PersonalDetails extends React.Component {
                 middleName:details.middleName,
                 lastName: details.lastName,
                 maritalStatus: details.maritalStatus,
+                birthDate: details.birthDate,
                 dependents: details.dependents,
                 driversLicence: details.driversLicence,
                 ausResident: details.ausResident,
                 usResident: details.usResident,
                 otherCountryResident: details.otherCountryResident
             },
+            applicantRelationshipType: details.applicantRelationshipType,
+            partyType: details.partyType,
+            isExistingParty: details.isExistingParty,
+            eKYCConsent: details.eKYCConsent,
+            TFN: details.TFN,
+            identificationDetails: [
+                {
+                    type: details.type,
+                    id: details.id,
+                    issuingAuthority: details.issuingAuthority,
+                    countryOfIssue: details.countryOfIssue,
+                    placeOfIssue: details.placeOfIssue,
+                    status: details.status,
+                    expiryDate: details.expiryDate,
+                    identificationId: details.identificationDetails
+                }
+
+            ],
             currentAddress: {
                 type: details.type,
                 postalAddress: {
@@ -54,7 +73,27 @@ export default class PersonalDetails extends React.Component {
                 personalMobile: details.personalMobile,
                 personalEmail: details.personalEmail,
                 homePhone: details.homePhone
+            },
+            securityQuestions: [{
+                questionId: details.questionId,
+                question: details.question,
+                answer: details.answer
+
+            }],
+            consent: [{
+                consentType: details.consentType,
+                isConsentAvailable: details.isConsentAvailable,
+                consentLevelType: details.consentLevelType
+            }],
+            isApplicantNotPresent: details.isApplicantNotPresent,
+            occupationCode: details.occupationCode,
+            industry: details.industry,
+            fatcaDetails: {
+                USResident: details.USResident,
+                idType: details.idType,
+                idNumber: details.idNumber
             }
+
 
 
         };

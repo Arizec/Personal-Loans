@@ -9,12 +9,25 @@ export default class EmploymentDetails extends React.Component {
     constructor (props) {
         super(props);
 
+        let details = this.props.employmentDetails;
+
         this.state = {
             show: true,
-            employmentStatus: this.props.employmentDetails.employmentStatus,
-            employerName:  this.props.employmentDetails.employerName,
-            jobTitle:  this.props.employmentDetails.jobTitle,
-            startDate: ""
+            partyDetailsConsent: details.partyDetailsConsent,
+            profiles: details.profiles,
+            employmentProfiles: [{
+                id                 : details.id,
+                type               : details.type,
+                status             : details.status,
+                industry           : details.industry,
+                occupation         : details.occupation,
+                employerName       : details.employerName,
+                startDate          : details.startDate,
+                endDate            : details.endDate,
+                isPrimary          : details.isPrimary,
+                profileStatus      : details.profileStatus
+            }]
+
         };
 
         this.handleClick=this.handleClick.bind(this)
@@ -99,9 +112,10 @@ export default class EmploymentDetails extends React.Component {
 
     showDetails(){
         var optionChosen = "";
+        console.log(this.state.employmentProfiles[0].status);
 
-        if(this.state.employmentStatus !== null){
-            optionChosen = this.state.employmentStatus.value;
+        if(this.state.employmentProfiles[0].status !== null){
+            optionChosen = this.state.employmentProfiles[0].status;
         }
 
         return (

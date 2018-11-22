@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Loans from "./loans/Loans";
+import Test from "./Test";
+
 
 
 // To store all the routs
@@ -11,7 +13,8 @@ class App extends Component {
             <Router>
                 <Switch>
                     {/*  USER ROUTES    */}
-                    <Route path="/" exact render={(props) => (<Loans/>)} />
+                    <Route path="/" render={(routeProps) => <Test {...routeProps}/>} />
+                    <Route path="/submission" render={(routeProps) => <Loans {...routeProps}/>} />
 
                 </Switch>
             </Router>

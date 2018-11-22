@@ -8,6 +8,7 @@ import LoanPurposeOptions from "./loanFormItems/LoanPurposeOptions";
 import RepaymentFrequencyOptions from "./loanFormItems/RepaymentFrequencyOptions";
 import LoanTermOptions from "./loanFormItems/LoanTermOptions";
 
+
 // Stores information relating to loan details section
 export default class LoanDetails extends React.Component {
 
