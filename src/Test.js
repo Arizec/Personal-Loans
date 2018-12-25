@@ -13,10 +13,9 @@ export default class Test extends React.Component {
 
     getProducts(){
         fetch('http://localhost:3000/submission')
-            .then(response => {
-                console.log(response)
-            })
-            .catch(err => console.error("err", err));
+            .then(response => response.json())
+            .then(response => this.setState({items: response.data}))
+            .catch(err => console.error(err));
 
     }
 

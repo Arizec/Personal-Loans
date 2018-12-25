@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Loans from "./loans/Loans";
 import Test from "./Test";
+import LoanTermOptions from "./loans/loanItems/loanlDetails/loanFormItems/LoanTermOptions";
 
 
 
@@ -13,7 +14,7 @@ class App extends Component {
             <Router>
                 <Switch>
                     {/*  USER ROUTES    */}
-                    <Route path="/" render={(routeProps) => <Test {...routeProps}/>} />
+                    <Route path="/" render={(routeProps) => <Loans {...routeProps}/>} />
                     <Route path="/submission" render={(routeProps) => <Loans {...routeProps}/>} />
 
                 </Switch>
